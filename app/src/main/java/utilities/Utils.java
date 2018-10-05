@@ -60,7 +60,7 @@ public class Utils {
     public static void writeVideoToSDFile( String sbug){
         File root = Environment.getExternalStorageDirectory();
         Log.i("External",root.toString());
-        File dir = new File (root.getAbsolutePath() + "/Diagnosa/Video/");
+        File dir = new File (root.getAbsolutePath() + "/OphaGo/Video/");
         dir.mkdirs();
         File file = new File(dir, "myData.txt");
         try {
@@ -82,7 +82,7 @@ public class Utils {
     public static void writeToImgSDFile(String sbug){
         File root = Environment.getExternalStorageDirectory();
         Log.i("External",root.toString());
-        File dir = new File (root.getAbsolutePath() + "/Diagnosa/Image/");
+        File dir = new File (root.getAbsolutePath() + "/OphaGo/Image/");
         dir.mkdirs();
         File file = new File(dir, "myData.txt");
         try {
@@ -104,7 +104,7 @@ public class Utils {
     public static void writeToDocSDFile(String sbug){
         File root = Environment.getExternalStorageDirectory();
         Log.i("External",root.toString());
-        File dir = new File (root.getAbsolutePath() + "/Diagnosa/Document/");
+        File dir = new File (root.getAbsolutePath() + "/OphaGo/Document/");
         dir.mkdirs();
         File file = new File(dir, "myData.txt");
         try {

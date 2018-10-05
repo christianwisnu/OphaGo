@@ -151,7 +151,7 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
         File sd = Environment.getExternalStorageDirectory();
         sdbname = (Utils.getDateTimeNameFile()+".jpg");
         Utils.writeToImgSDFile( sdbname);
-        String backupDBPath = "Diagnosa/Image/"+sdbname;
+        String backupDBPath = "OphaGo/Image/"+sdbname;
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
         final File file = new File(sd,  backupDBPath);

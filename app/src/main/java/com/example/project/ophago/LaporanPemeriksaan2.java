@@ -177,7 +177,7 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
         try {
             File sd = Environment.getExternalStorageDirectory();
             Utils.writeToDocSDFile( kodePasien+".pdf");
-            String backupDBPath = "Diagnosa/Document/"+kodePasien+".pdf";
+            String backupDBPath = "OphaGo/Document/"+kodePasien+".pdf";
             final File file = new File(sd, backupDBPath);
             file.createNewFile();
             FileOutputStream fOut = new FileOutputStream(file);
@@ -284,10 +284,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                     if( !header.getPathGbr1().trim().equals("")){
                         String[] a = header.getPathGbr1().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()){
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr1());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -306,10 +306,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                         pFoto1.add(Chunk.TABBING);
                         String[] a = header.getPathGbr2().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()) {
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr2());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -328,10 +328,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                         pFoto1.add(Chunk.TABBING);
                         String[] a = header.getPathGbr3().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()) {
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr3());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -355,10 +355,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                         pFoto2.add(Chunk.TABBING);
                         String[] a = header.getPathGbr4().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()) {
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr4());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -377,10 +377,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                         pFoto2.add(Chunk.TABBING);
                         String[] a = header.getPathGbr5().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()) {
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr5());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -399,10 +399,10 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
                         pFoto2.add(Chunk.TABBING);
                         String[] a = header.getPathGbr6().split("/");
                         File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                                "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                                "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                         if(pdfFile.exists()) {
                             Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                    ".com.example.project.diagnosa.provider", pdfFile);
+                                    ".com.example.project.ophago.provider", pdfFile);
                             //Uri fileUri=Uri.parse(header.getPathGbr6());
                             InputStream ims = getContentResolver().openInputStream(path);
                             Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -466,14 +466,14 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
             doc.close();
         }
         hideDialog();
-        viewPdf(kodePasien+".pdf", "Diagnosa/Document");
+        viewPdf(kodePasien+".pdf", "OphaGo/Document");
     }
 
     private void viewPdf(String file, String directory) {
         File pdfFile = new File(Environment.getExternalStorageDirectory() +
                 "/" + directory + "/" + file);
         Uri path = FileProvider.getUriForFile(LaporanPemeriksaan2.this, getApplicationContext().getPackageName() +
-                ".com.example.project.diagnosa.provider", pdfFile);
+                ".com.example.project.ophago.provider", pdfFile);
         Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
         pdfIntent.setDataAndType(path, "application/pdf");
         pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -51,13 +51,13 @@ public class SendEmailActivity extends AppCompatActivity {
         Intent i = getIntent();
         noTrans =  i.getStringExtra("noTrans");
 
-        /*String uriDoc = "file:///storage/emulated/0/Diagnosa/Document/"+noTrans+".pdf";
+        /*String uriDoc = "file:///storage/emulated/0/OphaGo/Document/"+noTrans+".pdf";
         fileUri = Uri.parse(uriDoc);
         File f = new File(fileUri.toString());*/
 
-        pdfFile = new File(Environment.getExternalStorageDirectory() + "/" + "Diagnosa/Document" + "/" + noTrans+".pdf");
+        pdfFile = new File(Environment.getExternalStorageDirectory() + "/" + "OphaGo/Document" + "/" + noTrans+".pdf");
         fileUri = FileProvider.getUriForFile(SendEmailActivity.this, getApplicationContext().getPackageName() +
-                ".com.example.project.diagnosa.provider", pdfFile);
+                ".com.example.project.ophago.provider", pdfFile);
 
         prefUtil = new PrefUtil(this);
         try{

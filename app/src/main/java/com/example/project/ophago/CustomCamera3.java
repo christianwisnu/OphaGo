@@ -196,7 +196,7 @@ public class CustomCamera3 extends AppCompatActivity {
         File sd = Environment.getExternalStorageDirectory();
         String sdbname = (Utils.getDateTimeNameFile()+".mp4");
         Utils.writeVideoToSDFile(sdbname);
-        String backupDBPath = "Diagnosa/Video/"+sdbname;
+        String backupDBPath = "OphaGo/Video/"+sdbname;
         File mediaFile = new File(sd, backupDBPath);
         file = mediaFile;
         return file;

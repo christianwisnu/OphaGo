@@ -96,7 +96,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
         File sd = Environment.getExternalStorageDirectory();
         sdbname = (Utils.getDateTimeNameFile()+".mp4");
         Utils.writeVideoToSDFile(sdbname);
-        String backupDBPath = "Diagnosa/Video/"+sdbname;
+        String backupDBPath = "OphaGo/Video/"+sdbname;
         File mediaFile = new File( sd, backupDBPath);
 
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);

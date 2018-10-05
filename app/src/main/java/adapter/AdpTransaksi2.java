@@ -144,7 +144,7 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
         try {
             File sd = Environment.getExternalStorageDirectory();
             Utils.writeToDocSDFile( header.getNoTrans()+".pdf");
-            String backupDBPath = "Diagnosa/Document/"+header.getNoTrans()+".pdf";
+            String backupDBPath = "OphaGo/Document/"+header.getNoTrans()+".pdf";
             final File file = new File(sd, backupDBPath);
             file.createNewFile();
             FileOutputStream fOut = new FileOutputStream(file);
@@ -252,10 +252,10 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr1().trim().equals("")){
                     String[] a = header.getPathGbr1().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()){
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr1());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -272,12 +272,12 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr2().trim().equals("")){
                     String[] a = header.getPathGbr2().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         pFoto1.setTabSettings(new TabSettings(20f));
                         pFoto1.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr2());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -294,12 +294,12 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr3().trim().equals("")){
                     String[] a = header.getPathGbr3().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         pFoto1.setTabSettings(new TabSettings(20f));
                         pFoto1.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr3());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -321,12 +321,12 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr4().trim().equals("")){
                     String[] a = header.getPathGbr4().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         pFoto2.setTabSettings(new TabSettings(20f));
                         pFoto2.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr4());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -343,12 +343,12 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr5().trim().equals("")){
                     String[] a = header.getPathGbr5().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         pFoto2.setTabSettings(new TabSettings(20f));
                         pFoto2.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr5());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -365,12 +365,12 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
                 if(!header.getPathGbr6().trim().equals("")){
                     String[] a = header.getPathGbr6().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         pFoto2.setTabSettings(new TabSettings(20f));
                         pFoto2.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr6());
                         InputStream ims = getContext().getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -430,7 +430,7 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
         finally {
             doc.close();
         }
-        viewPdf(header.getNoTrans()+".pdf", "Diagnosa/Document");
+        viewPdf(header.getNoTrans()+".pdf", "OphaGo/Document");
     }
 
     private void viewPdf(String file, String directory) {
@@ -445,7 +445,7 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
         File pdfFile = new File(Environment.getExternalStorageDirectory() +
                 "/" + directory + "/" + file);
         Uri path = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() +
-                ".com.example.project.diagnosa.provider", pdfFile);
+                ".com.example.project.ophago.provider", pdfFile);
         Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
         pdfIntent.setDataAndType(path, "application/pdf");
         pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

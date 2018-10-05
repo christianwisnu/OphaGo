@@ -150,18 +150,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
     EditText eSaran;
     @BindView(R.id.btnKesimpulanSave2)
     Button btnSave;
-    @BindView(R.id.ckKesimTlKn2)
-    CheckBox ckTlKn;
-    @BindView(R.id.ckKesimTlKr2)
-    CheckBox ckTlKr;
-    @BindView(R.id.ckKesimHdKn2)
-    CheckBox ckHdKn;
-    @BindView(R.id.ckKesimHdKr2)
-    CheckBox ckHdKr;
-    @BindView(R.id.ckKesimTgr2)
-    CheckBox ckTgr;
-    @BindView(R.id.ckKesimMlt2)
-    CheckBox ckMlt;
+    @BindView(R.id.ckKesimMtKn)
+    CheckBox ckMtKn;
+    @BindView(R.id.ckKesimMtKr)
+    CheckBox ckMtKr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,18 +172,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             eGender.setText(model.getHeader().getGender());
             eKeluhan.setText(model.getHeader().getKeluhan());
             for(TransaksiItemModel item:model.getItemList()){
-                if(item.getAnatomi().equals(Link.HDG_KN)){
-                    ckHdKn.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.HDG_KR)){
-                    ckHdKr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TEL_KN)){
-                    ckTlKn.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TEL_KR)){
-                    ckTlKr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TGR)){
-                    ckTgr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.MLT)){
-                    ckMlt.setChecked(true);
+                if(item.getAnatomi().equals(Link.MATA_KN)){
+                    ckMtKn.setChecked(true);
+                }else if(item.getAnatomi().equals(Link.MATA_KR)){
+                    ckMtKr.setChecked(true);
                 }
             }
             txtJudul.setText("KESIMPULAN");
@@ -209,18 +193,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             eSaran.setText(laporanModel.getSaran());
             eKesimpulan.setText(laporanModel.getKesimpulan());
             for(LaporanItemModel item:laporanModel.getItemList()){
-                if(item.getAnatomi().equals(Link.HDG_KN)){
-                    ckHdKn.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.HDG_KR)){
-                    ckHdKr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TEL_KN)){
-                    ckTlKn.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TEL_KR)){
-                    ckTlKr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.TGR)){
-                    ckTgr.setChecked(true);
-                }else if(item.getAnatomi().equals(Link.MLT)){
-                    ckMlt.setChecked(true);
+                if(item.getAnatomi().equals(Link.MATA_KN)){
+                    ckMtKn.setChecked(true);
+                }else if(item.getAnatomi().equals(Link.MATA_KR)){
+                    ckMtKr.setChecked(true);
                 }
             }
             txtJudul.setText("EDIT KESIMPULAN");
@@ -543,7 +519,7 @@ public class KesimpulanActivity2 extends AppCompatActivity {
         try {
             File sd = Environment.getExternalStorageDirectory();
             Utils.writeToDocSDFile( header.getHeader().getNoTrans()+".pdf");
-            String backupDBPath = "Diagnosa/Document/"+header.getHeader().getNoTrans()+".pdf";
+            String backupDBPath = "OphaGo/Document/"+header.getHeader().getNoTrans()+".pdf";
             final File file = new File(sd, backupDBPath);
             file.createNewFile();
             FileOutputStream fOut = new FileOutputStream(file);
@@ -650,10 +626,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                 if(!header.getHeader().getPathGbr1().trim().equals("")){
                     String[] a = header.getHeader().getPathGbr1().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()){
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr1());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -672,10 +648,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     pFoto1.add(Chunk.TABBING);
                     String[] a = header.getHeader().getPathGbr2().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr2());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -694,10 +670,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     pFoto1.add(Chunk.TABBING);
                     String[] a = header.getHeader().getPathGbr3().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr3());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -721,10 +697,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     pFoto2.add(Chunk.TABBING);
                     String[] a = header.getHeader().getPathGbr4().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr4());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -743,10 +719,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     pFoto2.add(Chunk.TABBING);
                     String[] a = header.getHeader().getPathGbr5().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr5());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -765,10 +741,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     pFoto2.add(Chunk.TABBING);
                     String[] a = header.getHeader().getPathGbr6().split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "Diagnosa/Image" + "/" + a[a.length-1]);
+                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()) {
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.diagnosa.provider", pdfFile);
+                                ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr6());
                         InputStream ims = getContentResolver().openInputStream(path);
                         Bitmap bmp = BitmapFactory.decodeStream(ims);
@@ -828,14 +804,14 @@ public class KesimpulanActivity2 extends AppCompatActivity {
         finally {
             doc.close();
         }
-        viewPdf(header.getHeader().getNoTrans()+".pdf", "Diagnosa/Document");
+        viewPdf(header.getHeader().getNoTrans()+".pdf", "OphaGo/Document");
     }
 
     private void viewPdf(String file, String directory) {
         File pdfFile = new File(Environment.getExternalStorageDirectory() +
                 "/" + directory + "/" + file);
         Uri path = FileProvider.getUriForFile(KesimpulanActivity2.this, getApplicationContext().getPackageName() +
-                ".com.example.project.diagnosa.provider", pdfFile);
+                ".com.example.project.ophago.provider", pdfFile);
         Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
         pdfIntent.setDataAndType(path, "application/pdf");
         pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

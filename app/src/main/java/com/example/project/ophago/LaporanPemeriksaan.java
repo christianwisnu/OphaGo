@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -83,6 +84,7 @@ public class LaporanPemeriksaan extends AppCompatActivity {
     private LaporanModel modelNext;
     private PrefUtil prefUtil;
     private SharedPreferences shared;
+    private ImageButton btnddPasien;
     private int RESULT_EDIT_KESIMPULAN = 21;
 
     @Override
@@ -109,10 +111,20 @@ public class LaporanPemeriksaan extends AppCompatActivity {
         imgTglTo = (ImageView) findViewById(R.id.img_listtrans_tglto2);
         imgPilihPasien = (ImageView) findViewById(R.id.imgPilihPasienRiwayat1);
         txtStatus = (TextView) findViewById(R.id.TvStatusDataListTransaksi2);
+        btnddPasien = (ImageButton) findViewById(R.id.btnRiwayatAddPasien);
 
         model2 = new LaporanModel();
         adapter		= new AdpTransaksi(LaporanPemeriksaan.this, R.layout.col_transaksi, columnlist);
         lsvupload.setAdapter(adapter);
+
+        btnddPasien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(LaporanPemeriksaan.this, DataPasien2.class);
+                a.putExtra("Status",1);
+                startActivity(a);
+            }
+        });
 
         ckAllPasien.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -421,6 +433,7 @@ public class LaporanPemeriksaan extends AppCompatActivity {
                     if(JsonArray.get(0).toString().trim().equals("null")==true){
                         txtStatus.setVisibility(View.VISIBLE);
                         txtStatus.setText("Data Tidak Ada");
+                        hideDialog();
                     }else if(JsonArray.length()>0){
                         txtStatus.setVisibility(View.INVISIBLE);
                         for (int i = 0; i <JsonArray.getJSONArray(0).length(); i++) {

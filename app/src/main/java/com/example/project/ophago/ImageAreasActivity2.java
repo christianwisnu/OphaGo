@@ -26,12 +26,8 @@ import utilities.Utils;
 
 public class ImageAreasActivity2 extends AppCompatActivity {
 
-    @BindView(R.id.ckTelKn2)CheckBox ckTlKn;
-    @BindView(R.id.ckTelKr2)CheckBox ckTlKr;
-    @BindView(R.id.ckHidKn2)CheckBox ckHdKn;
-    @BindView(R.id.ckHidKr2)CheckBox ckHdKr;
-    @BindView(R.id.ckTenggorokan2)CheckBox ckTgr;
-    @BindView(R.id.ckRonggaMulut2)CheckBox ckMlt;
+    @BindView(R.id.ckMataKanan)CheckBox ckMtKn;
+    @BindView(R.id.ckMataKiri)CheckBox ckMtKr;
     @BindView(R.id.img_anatomi_lanjutkan)ImageView imgNext;
 
     private boolean tlKn=false, tlKr=false, hdKn=false, hdKr=false, tgr=false, mlt=false;
@@ -80,16 +76,16 @@ public class ImageAreasActivity2 extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.ckTelKn2)
+    @OnClick(R.id.ckMataKanan)
     protected void tlkn(){
         tlKn=!tlKn;
-        ckTlKn.setChecked(tlKn);
-        if(ckTlKn.isChecked()){
+        ckMtKn.setChecked(tlKn);
+        if(ckMtKn.isChecked()){
             noUrut++;
-            list.put(noUrut, Link.TEL_KN);
+            list.put(noUrut, Link.MATA_KN);
         }else{
             for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.TEL_KN)){
+                if(entry.getValue().equals(Link.MATA_KN)){
                     list.remove(entry.getKey());
                     break;
                 }
@@ -97,84 +93,16 @@ public class ImageAreasActivity2 extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.ckTelKr2)
+    @OnClick(R.id.ckMataKiri)
     protected void tlkr(){
         tlKr=!tlKr;
-        ckTlKr.setChecked(tlKr);
-        if(ckTlKr.isChecked()){
+        ckMtKr.setChecked(tlKr);
+        if(ckMtKr.isChecked()){
             noUrut++;
-            list.put(noUrut, Link.TEL_KR);
+            list.put(noUrut, Link.MATA_KR);
         }else{
             for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.TEL_KR)){
-                    list.remove(entry.getKey());
-                    break;
-                }
-            }
-        }
-    }
-
-    @OnClick(R.id.ckHidKn2)
-    protected void hdkn(){
-        hdKn=!hdKn;
-        ckHdKn.setChecked(hdKn);
-        if(ckHdKn.isChecked()){
-            noUrut++;
-            list.put(noUrut, Link.HDG_KN);
-        }else{
-            for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.HDG_KN)){
-                    list.remove(entry.getKey());
-                    break;
-                }
-            }
-        }
-    }
-
-    @OnClick(R.id.ckHidKr2)
-    protected void hdkr(){
-        hdKr=!hdKr;
-        ckHdKr.setChecked(hdKr);
-        if(ckHdKr.isChecked()){
-            noUrut++;
-            list.put(noUrut, Link.HDG_KR);
-        }else{
-            for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.HDG_KR)){
-                    list.remove(entry.getKey());
-                    break;
-                }
-            }
-        }
-    }
-
-    @OnClick(R.id.ckTenggorokan2)
-    protected void tgrk(){
-        tgr=!tgr;
-        ckTgr.setChecked(tgr);
-        if(ckTgr.isChecked()){
-            noUrut++;
-            list.put(noUrut, Link.TGR);
-        }else{
-            for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.TGR)){
-                    list.remove(entry.getKey());
-                    break;
-                }
-            }
-        }
-    }
-
-    @OnClick(R.id.ckRonggaMulut2)
-    protected void mulut(){
-        mlt=!mlt;
-        ckMlt.setChecked(mlt);
-        if(ckMlt.isChecked()){
-            noUrut++;
-            list.put(noUrut, Link.MLT);
-        }else{
-            for (Map.Entry<Integer, String> entry : list.entrySet()) {
-                if(entry.getValue().equals(Link.MLT)){
+                if(entry.getValue().equals(Link.MATA_KR)){
                     list.remove(entry.getKey());
                     break;
                 }
@@ -196,12 +124,8 @@ public class ImageAreasActivity2 extends AppCompatActivity {
     }
 
     private void refreshAll(){
-        ckHdKn.setChecked(false);
-        ckHdKr.setChecked(false);
-        ckTlKn.setChecked(false);
-        ckTlKr.setChecked(false);
-        ckTgr.setChecked(false);
-        ckMlt.setChecked(false);
+        ckMtKr.setChecked(false);
+        ckMtKn.setChecked(false);
         tlKn=false;
         tlKr=false;
         hdKn=false;

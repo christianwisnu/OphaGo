@@ -83,33 +83,34 @@ public class AddDataPasien2 extends AppCompatActivity {
             userId  = shared.getString(PrefUtil.ID, null);
             username = shared.getString(PrefUtil.NAME, null);
         }catch (Exception e){e.getMessage();}
-        status =  i.getStringExtra("status");
-        if(status.equals("MASTER")){
-            kode = i.getStringExtra("kode");
-            nama = i.getStringExtra("nama");
-            alamat = i.getStringExtra("alamat");
-            gender = i.getStringExtra("gender");
-            telp = i.getStringExtra("telp");
-            tgl = i.getStringExtra("tgl");
-            try{
-                edNoPasien.setText(kode);
-                edNamaPasien.setText(nama);
-                edAlamat.setText(alamat);
-                if(gender.equals("L")){
-                    rbLaki.setChecked(true);
-                    rbWanita.setChecked(false);
-                }else{
-                    rbLaki.setChecked(false);
-                    rbWanita.setChecked(true);
-                }
-                edTelp.setText(telp);
-                Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(tgl);
-                edPasienBirthday.setText(sdf1.format(date1.getTime()));
-                int age = calculateAge(date1);
-                edUmur.setText(String.valueOf(age));
-            }catch (Exception ex){
+        //status =  i.getStringExtra("status");
+        //if(status.equals("MASTER")){
+
+        kode = i.getStringExtra("kode");
+        nama = i.getStringExtra("nama");
+        alamat = i.getStringExtra("alamat");
+        gender = i.getStringExtra("gender");
+        telp = i.getStringExtra("telp");
+        tgl = i.getStringExtra("tgl");
+        try{
+            edNoPasien.setText(kode);
+            edNamaPasien.setText(nama);
+            edAlamat.setText(alamat);
+            if(gender.equals("L")){
+                rbLaki.setChecked(true);
+                rbWanita.setChecked(false);
+            }else{
+                rbLaki.setChecked(false);
+                rbWanita.setChecked(true);
             }
-        }
+            edTelp.setText(telp);
+            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(tgl);
+            edPasienBirthday.setText(sdf1.format(date1.getTime()));
+            int age = calculateAge(date1);
+            edUmur.setText(String.valueOf(age));
+        }catch (Exception ex){}
+
+        //}
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
 

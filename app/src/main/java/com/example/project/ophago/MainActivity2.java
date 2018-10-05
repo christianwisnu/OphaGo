@@ -35,7 +35,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     @BindView(R.id.txtMainNama)TextView txtNama;
     @BindView(R.id.imgLogout)ImageView imgLogout;
-    @BindView(R.id.imgMainPasienBaru)ImageView imgNewTrans;
     @BindView(R.id.imgMainHistoryPasien)ImageView imgHistory;
 
     private PrefUtil pref;
@@ -108,27 +107,6 @@ public class MainActivity2 extends AppCompatActivity {
         startActivity(new Intent(MainActivity2.this, Login.class));
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
-    }
-
-    @OnClick(R.id.imgMainPasienBaru)
-    protected void baru(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pasien");
-        builder.setItems(items, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (items[i].equals("Baru")) {
-                    Intent a = new Intent(MainActivity2.this, DataPasien2.class);
-                    a.putExtra("Status",1);
-                    startActivity(a);
-                } else if (items[i].equals("Lama")) {
-                    Intent a = new Intent(MainActivity2.this, AddDataPasien2.class);
-                    a.putExtra("status","NEW");
-                    startActivity(a);
-                }
-            }
-        });
-        builder.show();
     }
 
     @OnClick(R.id.imgMainHistoryPasien)

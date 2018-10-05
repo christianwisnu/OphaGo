@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">OphaGO</string>
+
+    <string name="err_msg_kode">Kode Pasien tidak boleh kosong!</string>
+    <string name="err_msg_nama">Nama Pasien Harus diisi!</string>
+    <string name="err_msg_user">User ID Harus diisi!</string>
+    <string name="err_msg_birthday">Tanggal Lahir Pasien Harus diisi!</string>
+    <string name="err_msg_alamat">Alamat Harus diisi!</string>
+    <string name="err_msg_hp">No Telp Harus diisi!</string>
+    <string name="err_msg_sandi">Password Harus diisi!</string>
+    <string name="err_msg_kesimpulan">Kesimpulan Harus diisi!</string>
+    <string name="err_msg_saran">Saran Harus diisi!</string>
+    <string name="err_msg_diagnosa">Diagnosa Harus diisi!</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!--<string name="app_id">428B155E</string>-->
+
+    <!--<string name="app_id">C14210D6</string>
+    <string name="media_route_menu_title">Play on&#8230;</string>-->
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Selamat Datang!</string>
+
+    <!--<string name="telinga_poster">http://softchrist.com/diagnosa/image/telinga.png</string>
+    <string name="hidung_poster">http://softchrist.com/diagnosa/image/hidung.png</string>
+    <string name="tenggorokan_poster">http://softchrist.com/diagnosa/image/tenggorokan.png</string>
+    <string name="mulut_poster">http://softchrist.com/diagnosa/image/mulut.png</string>-->
+</resources>

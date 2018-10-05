@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/endoskop_tri_39"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PILIH PEMERIKSAAN"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_purple_700"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2.0">
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/endoskop_tri_22"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/cardcyclepurple"
+                        android:gravity="center"
+                        android:text="TELINGA"
+                        android:textColor="@color/md_white"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0"
+                        android:gravity="center">
+
+                        <CheckBox
+                            android:id="@+id/ckTelKn2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kanan"
+                            android:textSize="12dp"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:textColor="@color/md_black"/>
+
+                        <CheckBox
+                            android:id="@+id/ckTelKr2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kiri"
+                            android:textSize="12dp"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:textColor="@color/md_black"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/endoskop_tri_23"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/cardcyclepurple"
+                        android:gravity="center"
+                        android:text="HIDUNG"
+                        android:textColor="@color/md_white"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0"
+                        android:gravity="center">
+
+                        <CheckBox
+                            android:id="@+id/ckHidKn2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:text="Kanan"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:textColor="@color/md_black"/>
+
+                        <CheckBox
+                            android:id="@+id/ckHidKr2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:text="Kiri"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:textColor="@color/md_black"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2.0">
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/endoskop_tri_24"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/cardcyclepurple"
+                        android:gravity="center"
+                        android:text="LARING"
+                        android:textColor="@color/md_white"
+                        android:textSize="17dp"/>
+
+                    <CheckBox
+                        android:id="@+id/ckTenggorokan2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:text="Tenggorokan"
+                        android:gravity="center"
+                        android:textColor="@color/md_black"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/endoskop_tri_25"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/cardcyclepurple"
+                        android:gravity="center"
+                        android:text="OROFARING"
+                        android:textColor="@color/md_white"
+                        android:textSize="17dp" />
+
+                    <CheckBox
+                        android:id="@+id/ckRonggaMulut2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:text="Rongga Mulut"
+                        android:gravity="center"
+                        android:textColor="@color/md_black"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/img_anatomi_lanjutkan"
+                    android:layout_margin="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/endoskop_tri_51"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+    
+</LinearLayout>

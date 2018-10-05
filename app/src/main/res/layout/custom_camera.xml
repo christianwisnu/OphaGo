@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/videoview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/timer_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/upper_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2.0"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="left|center">
+
+                    <Button
+                        android:id="@+id/flash_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/ic_flash_off_black_36dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="30dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="right|center">
+
+                    <Button
+                        android:id="@+id/camera_switchbutton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/ic_switch_video_black_36dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+
+                <Button
+                    android:id="@+id/pause_play_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@mipmap/ic_play_circle_outline_white_36dp"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/start_video_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/ic_album_white_36dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

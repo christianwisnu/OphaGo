@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="MarginLayout">5dp</dimen>
+    <dimen name="MarginButton">20dp</dimen>
+    <dimen name="actionbar_dimen">56dp</dimen>
+    <dimen name="Button_HW">36dp</dimen>
+    <dimen name="card">10dp</dimen>
+    <dimen name="paddingtext">5dp</dimen>
+    <dimen name="paddingimage">5dp</dimen>
+    <dimen name="WButton">250dp</dimen>
+    <dimen name="HButton">50dp</dimen>
+    <dimen name="HWImgProfile">80dp</dimen>
+    <dimen name="HWColImagePost">150dp</dimen>
+    <dimen name="HImgProfileBayground">200dp</dimen>
+    <dimen name="WListViewMenu">250dp</dimen>
+    <dimen name="HWButtonCycle">70dp</dimen>
+    <dimen name="HImageUpload">250dp</dimen>
+    <dimen name="HWColUpload">300dp</dimen>
+
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">150dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+</resources>

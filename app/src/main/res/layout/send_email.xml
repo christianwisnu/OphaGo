@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendEmailActivity">
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/md_purple_700"
+        android:textSize="25dp"
+        android:text="Kirim Email"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/et_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:hint="Receiver's Email Address!"
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/et_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_to"
+                android:layout_margin="5dp"
+                android:hint="Enter Subject"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/et_subject"
+                android:layout_margin="5dp"
+                android:gravity="top|left"
+                android:hint="Compose Email"
+                android:inputType="textMultiLine" />
+
+            <Button
+                android:id="@+id/bt_send"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/et_message"
+                android:layout_margin="5dp"
+                android:background="@drawable/slctpurplebutton"
+                android:textColor="@color/md_white"
+                android:text="Send" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

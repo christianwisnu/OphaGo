@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.project.diagnosa.CheckoutListAnatomi2"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/md_purple_700"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/endoskop_tri_40"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PEMERIKSAAN"
+            android:gravity="center"
+            android:textColor="@color/md_purple_700"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:divider="@color/md_purple_700"
+        android:dividerHeight="1dp"
+        android:id="@+id/LsvCheckoutListAnatomiku2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-40dp"
+        android:layout_marginRight="10dp"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/img_checkoutlistpasien_lanjutkan"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/endoskop_tri_51"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/castMiniController"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-70dp"
+        android:visibility="gone"
+        class="com.google.android.gms.cast.framework.media.widget.MiniControllerFragment" />
+
+</LinearLayout>

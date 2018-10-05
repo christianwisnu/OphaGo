@@ -61,7 +61,6 @@ public class AdpTransaksi extends ArrayAdapter<ListTransaksi> {
             public void onClick(View v) {
                 try{
                     Intent i = new Intent(getContext(), AddDataPasien2.class);
-                    //a.putExtra("status","NEW");
                     i.putExtra("kode",columnslist.get(position).getKodePasien());
                     i.putExtra("nama", columnslist.get(position).getNamaPasien());
                     i.putExtra("alamat", columnslist.get(position).getAlamat());

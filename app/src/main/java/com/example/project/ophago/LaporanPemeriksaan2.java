@@ -128,7 +128,6 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
             public void onClick(View v) {
                 try{
                     Intent i = new Intent(LaporanPemeriksaan2.this, AddDataPasien2.class);
-                    //i.putExtra("status","MASTER");
                     i.putExtra("kode",item.getKodePasien());
                     i.putExtra("nama", item.getNamaPasien());
                     i.putExtra("alamat", item.getAlamat());

@@ -327,7 +327,7 @@ public class DataPasien2 extends AppCompatActivity {
                         Intent returnIntent = new Intent();
                         if(lanjut==true){
                             Intent i = new Intent(DataPasien2.this, AddDataPasien2.class);
-                            i.putExtra("status","MASTER");
+                            //i.putExtra("status","MASTER");
                             i.putExtra("kode", kode);
                             i.putExtra("nama", nama);
                             i.putExtra("alamat", alamat);
@@ -338,15 +338,6 @@ public class DataPasien2 extends AppCompatActivity {
                             startActivity(i);
                             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                             finish();
-
-                            /*returnIntent.putExtra("kode",kode);
-                            returnIntent.putExtra("nama", nama);
-                            returnIntent.putExtra("alamat", alamat);
-                            returnIntent.putExtra("gender", gender);
-                            returnIntent.putExtra("telp", telp);
-                            returnIntent.putExtra("tgl", birthday);
-                            setResult(RESULT_OK, returnIntent);
-                            finish();*/
                         }else{
                             if(status==10){
                                 returnIntent.putExtra("kode",kode);

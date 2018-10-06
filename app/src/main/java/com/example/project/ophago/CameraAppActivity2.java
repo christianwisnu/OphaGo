@@ -69,6 +69,15 @@ public class CameraAppActivity2 extends ActionBarActivity {
 
     @OnClick(R.id.imgLanjutCam)
     protected void proses(){
+        lanjutkan();
+    }
+
+    @OnClick(R.id.imgplayvideo2)
+    protected void playvideo(){
+        screenshoot();
+    }
+
+    private void lanjutkan(){
         if(sukses>0 || hasilUri!=null){
             Intent returnIntent = new Intent();
             returnIntent.putExtra("object", model);
@@ -78,20 +87,6 @@ public class CameraAppActivity2 extends ActionBarActivity {
             Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();
         }
     }
-
-    @OnClick(R.id.imgplayvideo2)
-    protected void playvideo(){
-        if(sukses>0 || hasilUri!=null){
-            Intent i = new Intent(getApplicationContext(), ViewVideoActivity.class);
-            i.putExtra("line", line);
-            i.putExtra("fileuri", hasilUri.toString());
-            i.putExtra("object", model);
-            startActivityForResult(i, SCREENSHOOT);
-        }else{
-            Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();
-        }
-    }
-
     public void startRecording(){
         File sd = Environment.getExternalStorageDirectory();
         sdbname = (Utils.getDateTimeNameFile()+".mp4");
@@ -110,6 +105,17 @@ public class CameraAppActivity2 extends ActionBarActivity {
         startActivityForResult(i, MANUAL_RECORDING);*/
     }
 
+    private void screenshoot(){
+        if(sukses>0 || hasilUri!=null){
+            Intent i = new Intent(getApplicationContext(), ViewVideoActivity.class);
+            i.putExtra("line", line);
+            i.putExtra("fileuri", hasilUri.toString());
+            i.putExtra("object", model);
+            startActivityForResult(i, SCREENSHOOT);
+        }else{
+            Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -134,10 +140,14 @@ public class CameraAppActivity2 extends ActionBarActivity {
                 Toast.makeText(this, "Failed to record video",
                         Toast.LENGTH_LONG).show();
             }
+            //TODO ke screenshoot
+            screenshoot();
         }else if(requestCode == SCREENSHOOT){
             if(resultCode == RESULT_OK){
                 model = (TransaksiModel) data.getSerializableExtra("object");
             }
+            //TODO stlh dari screenshoot, keluar ke checkoutList tadi
+            lanjutkan();
         }else if(requestCode == MANUAL_RECORDING){
             if(resultCode == RESULT_OK){
                 String path = (String) data.getStringExtra("pathvideo");

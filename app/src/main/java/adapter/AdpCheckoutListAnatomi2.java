@@ -125,6 +125,4 @@ public class AdpCheckoutListAnatomi2 extends ArrayAdapter<TransaksiItemModel> {
             return false;
         }
     }
-
-
 }

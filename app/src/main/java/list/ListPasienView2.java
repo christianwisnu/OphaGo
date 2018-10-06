@@ -73,6 +73,9 @@ public class ListPasienView2 extends AppCompatActivity {
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
                 JSONResponse jsonResponse = response.body();
                 mArrayList = new ArrayList<>(Arrays.asList(jsonResponse.getPasien()));
+                if(mArrayList.isEmpty()){
+                    Toast.makeText(ListPasienView2.this, "Tidak Ada Data!", Toast.LENGTH_LONG).show();
+                }
                 mAdapter = new AdpListPasien2(ListPasienView2.this, mArrayList);
                 //assert mRecyclerView != null;
                 mRecyclerView.setAdapter(mAdapter);

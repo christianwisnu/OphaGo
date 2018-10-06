@@ -69,7 +69,7 @@ public class LaporanPemeriksaan extends AppCompatActivity {
     private TextView txtStatus;
     private TextInputLayout inputLayoutNama;
     private EditText edTglFrom, edTglTo, edNamaPasien;
-    private Button btnProses;
+    private Button btnProses, btnPemeriksaan;
     private ImageView imgTglFrom, imgTglTo, imgPilihPasien;
     private String getData2	="laporanDistinct.php";
     private boolean allPasien = false, allPeriode = false;
@@ -112,10 +112,35 @@ public class LaporanPemeriksaan extends AppCompatActivity {
         imgPilihPasien = (ImageView) findViewById(R.id.imgPilihPasienRiwayat1);
         txtStatus = (TextView) findViewById(R.id.TvStatusDataListTransaksi2);
         btnddPasien = (ImageButton) findViewById(R.id.btnRiwayatAddPasien);
+        btnPemeriksaan = (Button)findViewById(R.id.btnProsesTransaksiBaru);
 
         model2 = new LaporanModel();
         adapter		= new AdpTransaksi(LaporanPemeriksaan.this, R.layout.col_transaksi, columnlist);
         lsvupload.setAdapter(adapter);
+
+        lsvupload.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> Parent, View view, int position,
+                                    long id) {
+                item = columnlist.get(position);
+                String idPasien = item.getKodePasien();
+                modelNext = new LaporanModel();
+                for(LaporanHeaderModel header : model2.getHeaderList()){
+                    if(header.getNoPasien().equals(idPasien)){
+                        modelNext.addItem(header);
+                    }
+                }
+                Collections.sort(modelNext.getHeaderList(), new Urut());
+                Intent i = new Intent(getApplicationContext(), LaporanPemeriksaan2.class);
+                i.putExtra("object",item);
+                i.putExtra("model",modelNext);
+                i.putExtra("tglFrom",ckAllPeriode.isChecked()?"-":hasilTglFrom);
+                i.putExtra("tglTo",ckAllPeriode.isChecked()?"-":hasilTglTo);
+                i.putExtra("allPeriode",ckAllPeriode.isChecked()?"Y":"N");
+                startActivityForResult(i, RESULT_EDIT_KESIMPULAN);
+            }
+        });
 
         btnddPasien.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +148,16 @@ public class LaporanPemeriksaan extends AppCompatActivity {
                 Intent a = new Intent(LaporanPemeriksaan.this, DataPasien2.class);
                 a.putExtra("Status",1);
                 startActivity(a);
+            }
+        });
+
+        btnPemeriksaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LaporanPemeriksaan.this, AddDataPasien2.class);
+                i.putExtra("status","NEW");
+                startActivity(i);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -189,30 +224,6 @@ public class LaporanPemeriksaan extends AppCompatActivity {
                     new DatePickerDialog(LaporanPemeriksaan.this, dTo, dateAndTime.get(Calendar.YEAR),dateAndTime.get(Calendar.MONTH),
                             dateAndTime.get(Calendar.DAY_OF_MONTH)).show();
                 }
-            }
-        });
-
-        lsvupload.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> Parent, View view, int position,
-                                    long id) {
-                item = columnlist.get(position);
-                String idPasien = item.getKodePasien();
-                modelNext = new LaporanModel();
-                for(LaporanHeaderModel header : model2.getHeaderList()){
-                    if(header.getNoPasien().equals(idPasien)){
-                        modelNext.addItem(header);
-                    }
-                }
-                Collections.sort(modelNext.getHeaderList(), new Urut());
-                Intent i = new Intent(getApplicationContext(), LaporanPemeriksaan2.class);
-                i.putExtra("object",item);
-                i.putExtra("model",modelNext);
-                i.putExtra("tglFrom",ckAllPeriode.isChecked()?"-":hasilTglFrom);
-                i.putExtra("tglTo",ckAllPeriode.isChecked()?"-":hasilTglTo);
-                i.putExtra("allPeriode",ckAllPeriode.isChecked()?"Y":"N");
-                startActivityForResult(i, RESULT_EDIT_KESIMPULAN);
             }
         });
 

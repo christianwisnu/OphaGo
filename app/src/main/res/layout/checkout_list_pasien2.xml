@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.project.diagnosa.CheckoutListAnatomi2"
+    tools:context="com.example.project.ophago.CheckoutListAnatomi2"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -73,7 +73,7 @@
 
     </LinearLayout>
 
-    <fragment
+    <!--<fragment
         android:id="@+id/castMiniController"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,5 +81,5 @@
         android:layout_marginTop="-70dp"
         android:visibility="gone"
         class="com.google.android.gms.cast.framework.media.widget.MiniControllerFragment" />
-
+-->
 </LinearLayout>

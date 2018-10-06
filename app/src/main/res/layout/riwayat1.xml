@@ -188,13 +188,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnProsesListTrans2"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="PROSES"
+                android:textSize="17dp"
+                android:textStyle="normal"
+                android:textColor="@color/md_white"
+                android:background="@drawable/slctpurplebutton"
+                />
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btnProsesTransaksiBaru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PEMERIKSAAN"
                 android:textSize="17dp"
                 android:textStyle="normal"
                 android:textColor="@color/md_white"

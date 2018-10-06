@@ -327,7 +327,7 @@ public class DataPasien2 extends AppCompatActivity {
                         Intent returnIntent = new Intent();
                         if(lanjut==true){
                             Intent i = new Intent(DataPasien2.this, AddDataPasien2.class);
-                            //i.putExtra("status","MASTER");
+                            i.putExtra("status","EDIT");
                             i.putExtra("kode", kode);
                             i.putExtra("nama", nama);
                             i.putExtra("alamat", alamat);

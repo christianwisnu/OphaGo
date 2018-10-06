@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.project.ophago.AddDataPasien2;
@@ -48,7 +48,7 @@ public class AdpTransaksi extends ArrayAdapter<ListTransaksi> {
             v= vi.inflate(Resource, null);
             holder.TvNotrans    = 	 (TextView)v.findViewById(R.id.TvColListTransNomor);
             holder.TvNama	    =	 (TextView)v.findViewById(R.id.TvColListTransNama);
-            holder.addTrans	    =	 (ImageButton) v.findViewById(R.id.btnColTransAdd);
+            holder.addTrans	    =	 (ImageView) v.findViewById(R.id.btnColTransAdd);
             v.setTag(holder);
         }else{
             holder 	= (ViewHolder)v.getTag();
@@ -61,6 +61,7 @@ public class AdpTransaksi extends ArrayAdapter<ListTransaksi> {
             public void onClick(View v) {
                 try{
                     Intent i = new Intent(getContext(), AddDataPasien2.class);
+                    i.putExtra("status","EDIT");
                     i.putExtra("kode",columnslist.get(position).getKodePasien());
                     i.putExtra("nama", columnslist.get(position).getNamaPasien());
                     i.putExtra("alamat", columnslist.get(position).getAlamat());
@@ -79,6 +80,6 @@ public class AdpTransaksi extends ArrayAdapter<ListTransaksi> {
     static class ViewHolder{
         private TextView TvNotrans;
         private TextView TvNama;
-        private ImageButton addTrans;
+        private ImageView addTrans;
     }
 }

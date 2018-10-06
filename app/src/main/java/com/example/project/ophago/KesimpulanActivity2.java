@@ -584,7 +584,7 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             p10.add(new Chunk("Jenis Kelamin", paraFont3));
             p10.setTabSettings(new TabSettings(62f));
             p10.add(Chunk.TABBING);
-            p10.add(new Chunk(": "+(header.getHeader().getGender().equals("L")?"Laki-laki":"Perempuan"), paraFont3));
+            p10.add(new Chunk(": "+(header.getHeader().getGender()), paraFont3));
 
             p12.setAlignment(Paragraph.ALIGN_LEFT);
             p12.add(new Chunk("Usia", paraFont3));

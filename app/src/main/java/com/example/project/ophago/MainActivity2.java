@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        //Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             mRequestPermissionHandler = new RequestPermissionHandler();
             checkAndRequestPermissions();

@@ -48,15 +48,13 @@
             android:orientation="horizontal"
             android:layout_alignParentRight="true">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnColTransAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|right"
                 android:layout_margin="@dimen/MarginLayout"
                 android:background="@drawable/slctcycleadd"
                 android:src="@mipmap/ic_action_add_purple" />
-
         </LinearLayout>
 
     </RelativeLayout>

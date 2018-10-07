@@ -26,8 +26,8 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="170dp"
-            android:layout_height="180dp"
+            android:layout_width="250dp"
+            android:layout_height="170dp"
             android:background="@drawable/endoskop_tri_26"/>
 
     </LinearLayout>

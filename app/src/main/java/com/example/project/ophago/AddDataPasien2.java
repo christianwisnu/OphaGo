@@ -107,6 +107,7 @@ public class AddDataPasien2 extends AppCompatActivity {
                 edPasienBirthday.setText(sdf1.format(date1.getTime()));
                 int age = calculateAge(date1);
                 edUmur.setText(String.valueOf(age));
+                next();
             }catch (Exception ex){}
         }
 
@@ -130,6 +131,10 @@ public class AddDataPasien2 extends AppCompatActivity {
 
     @OnClick(R.id.btn_pasien_lanjut2)
     protected void lanjut(){
+        next();
+    }
+
+    private void next(){
         if(validateKode(edNoPasien) && validateNama(edNamaPasien) && validateKalender(edPasienBirthday) && validateGender(radioGrup)
                 && validateAlamat(edAlamat) && validateTelp(edTelp)){
             int selectedId = radioGrup.getCheckedRadioButtonId();
@@ -148,7 +153,6 @@ public class AddDataPasien2 extends AppCompatActivity {
                 i.putExtra("object",model);
                 startActivity(i);
             }catch (Exception ex){}
-
         }
     }
 

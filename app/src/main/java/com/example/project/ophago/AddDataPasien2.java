@@ -245,7 +245,7 @@ public class AddDataPasien2 extends AppCompatActivity {
                     edNoPasien.setText(kode);
                     edNamaPasien.setText(nama);
                     edAlamat.setText(alamat);
-                    if(gender.equals("L")){
+                    if(gender.equals("Laki-laki")){
                         rbLaki.setChecked(true);
                         rbWanita.setChecked(false);
                     }else{
@@ -253,7 +253,7 @@ public class AddDataPasien2 extends AppCompatActivity {
                         rbWanita.setChecked(true);
                     }
                     edTelp.setText(telp);
-                    Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(tgl);
+                    Date date1=new SimpleDateFormat("dd-MM-yyyy").parse(tgl);
                     edPasienBirthday.setText(sdf1.format(date1.getTime()));
                     int age = calculateAge(date1);
                     edUmur.setText(String.valueOf(age));

@@ -27,7 +27,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,7 +67,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".SendEmailActivity" />
         <activity android:name=".CustomCamera3" />
-        <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".MainActivity2"
             android:theme="@style/AppTheme"></activity>

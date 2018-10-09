@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
@@ -36,6 +37,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
     private String video, bagian;
     private int sukses=0;
     private int line;
+    private String status;
 
     @BindView(R.id.imgRecordCam)ImageView imgRecord;
     @BindView(R.id.imgLanjutCam)ImageView imgProses;
@@ -50,6 +52,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
         model = (TransaksiModel) i.getSerializableExtra("object");
         line = i.getIntExtra("line",0);
         video = i.getStringExtra("video");
+        status = i.getStringExtra("status");
         for(TransaksiItemModel item:model.getItemList() ){
             if(item.getLine()==line){
                 bagian = item.getAnatomi();
@@ -59,6 +62,9 @@ public class CameraAppActivity2 extends ActionBarActivity {
                     hasilUri=Uri.parse(video);
                 }
             }
+        }
+        if(status.equals("Y")){
+            startRecording();
         }
     }
 
@@ -88,15 +94,13 @@ public class CameraAppActivity2 extends ActionBarActivity {
         }
     }
     public void startRecording(){
-        File sd = Environment.getExternalStorageDirectory();
         sdbname = (Utils.getDateTimeNameFile()+".mp4");
         Utils.writeVideoToSDFile(sdbname);
-        String backupDBPath = "OphaGo/Video/"+sdbname;
-        File mediaFile = new File( sd, backupDBPath);
-
+        File mediaFile = new File( Environment.getExternalStorageDirectory() +
+                "/" + "OphaGo/Video"+ "/" +sdbname);
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        fileUri = Uri.fromFile(mediaFile);
-
+        fileUri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName()+
+                ".com.example.project.ophago.provider", mediaFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
         startActivityForResult(intent, VIDEO_CAPTURE);
 
@@ -111,6 +115,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
             i.putExtra("line", line);
             i.putExtra("fileuri", hasilUri.toString());
             i.putExtra("object", model);
+            i.putExtra("namaFile", sdbname);
             startActivityForResult(i, SCREENSHOOT);
         }else{
             Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();

@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 import com.example.project.ophago.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import model.list.ListPasien;
 
@@ -42,12 +44,15 @@ public class AdpListPasien2 extends RecyclerView.Adapter<AdpListPasien2.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.tv_kode.setText(mFilteredList.get(i).getUserId());
-        viewHolder.tv_nama.setText(mFilteredList.get(i).getNamaPasien());
-        viewHolder.tv_alamat.setText(mFilteredList.get(i).getAlamat());
-        viewHolder.tv_gender.setText(mFilteredList.get(i).getGender());
-        viewHolder.tv_telp.setText(mFilteredList.get(i).getNoHp());
-        viewHolder.tv_birthday.setText(mFilteredList.get(i).getTglLahir());
+        try{
+            viewHolder.tv_kode.setText(mFilteredList.get(i).getUserId());
+            viewHolder.tv_nama.setText(mFilteredList.get(i).getNamaPasien());
+            viewHolder.tv_alamat.setText(mFilteredList.get(i).getAlamat());
+            viewHolder.tv_gender.setText(mFilteredList.get(i).getGender().equals("L")?"Laki-laki":"Perempuan");
+            viewHolder.tv_telp.setText(mFilteredList.get(i).getNoHp());
+            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(mFilteredList.get(i).getTglLahir());
+            viewHolder.tv_birthday.setText(new SimpleDateFormat("dd-MM-yyyy").format(date1));
+        }catch(Exception ex){}
     }
 
     @Override
@@ -66,8 +71,7 @@ public class AdpListPasien2 extends RecyclerView.Adapter<AdpListPasien2.ViewHold
                 } else {
                     ArrayList<ListPasien> filteredList = new ArrayList<>();
                     for (ListPasien entity : mArrayList) {
-                        if (entity.getUserId().toLowerCase().contains(charString) ||
-                                entity.getNamaPasien().toLowerCase().contains(charString) ) {
+                        if (entity.getNamaPasien().toLowerCase().contains(charString) ) {
                             filteredList.add(entity);
                         }
                     }

@@ -102,6 +102,7 @@ public class AdpCheckoutListAnatomi2 extends ArrayAdapter<TransaksiItemModel> {
                     i.putExtra("line", columnslist.get(position).getLine());
                     i.putExtra("video", columnslist.get(position).getPathVideo()==null?"NONE":columnslist.get(position).getPathVideo());
                     i.putExtra("object", modelku);
+                    i.putExtra("status", "Y");
                     ((Activity) context).startActivityForResult(i,1);
                 }
             }

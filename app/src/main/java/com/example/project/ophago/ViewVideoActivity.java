@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,7 +36,7 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
     private VideoView mVideoView;
     private Button btnSs;
     private int line;
-    private String sdbname, video;
+    private String sdbname, video, namaFileVideo;
     private Uri fileUri;
     private Bitmap mbitmap;
     private int count=0, position=0;
@@ -52,20 +53,26 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
         video = i.getStringExtra("fileuri");
         line = i.getIntExtra("line",0);
         model = (TransaksiModel) i.getSerializableExtra("object");
+        namaFileVideo = i.getStringExtra("namaFile");
+
         mVideoView = (VideoView)findViewById(R.id.surface_view);
         //audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         //detector = new GestureDetection(this, this);
         btnSs = (Button)findViewById(R.id.btnScreenshoot);
         count=0;
-        fileUri=Uri.parse(video);
-
+        File fileVideo = new File( Environment.getExternalStorageDirectory() +
+                "/" + "OphaGo/Video"+ "/" +namaFileVideo);
+        fileUri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
+                ".com.example.project.ophago.provider", fileVideo);
         mVideoView.setVideoURI(fileUri);
         mVideoView.setMediaController(new MediaController(this));
         mVideoView.requestFocus();
-
-
         mediaMetadataRetriever = new MediaMetadataRetriever();
-        mediaMetadataRetriever.setDataSource(fileUri.getPath());
+        /*File pdfFile = new File(Environment.getExternalStorageDirectory() +
+                "/" + directory + "/" + file);
+        Uri path = FileProvider.getUriForFile(KesimpulanActivity2.this, getApplicationContext().getPackageName() +
+                ".com.example.project.ophago.provider", pdfFile);*/
+        mediaMetadataRetriever.setDataSource(this, fileUri);
 
         mediaController = new MediaController(this);
         mediaController.setAnchorView(mVideoView);

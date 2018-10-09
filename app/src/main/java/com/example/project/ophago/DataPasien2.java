@@ -172,8 +172,8 @@ public class DataPasien2 extends AppCompatActivity {
 
     @OnClick(R.id.btnDataPasienSave2)
     protected void save(){
-        if(validateNama(eNama) && validateKalender(edTgl) && validateGender(rgGender)
-                && validateAlamat(eAlamat) && validateTelp(eTelp)){
+        if(validateNama(eNama) && validateAlamat(eAlamat) && validateTelp(eTelp)
+                && validateKalender(edTgl) && validateGender(rgGender)){
             int selectedId = rgGender.getCheckedRadioButtonId();
             radioButton = (RadioButton) findViewById(selectedId);
 
@@ -333,7 +333,7 @@ public class DataPasien2 extends AppCompatActivity {
                             i.putExtra("alamat", alamat);
                             i.putExtra("gender", gender);
                             i.putExtra("telp", telp);
-                            Date date1=new SimpleDateFormat("dd-MM-yyy").parse(birthday);
+                            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
                             i.putExtra("tgl", df2.format(date1));
                             startActivity(i);
                             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

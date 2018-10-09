@@ -43,52 +43,32 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/input_layout_riwayat1_nama2"
+                <EditText
+                    android:id="@+id/eRiwayat1PasienNama2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Nama Pasien"
+                    android:layout_marginTop="5dp"
                     android:textColor="@color/md_white"
-                    android:textColorHint="@color/md_white"
-                    app:errorTextAppearance="@style/error_appearance"
-                    app:hintTextAppearance="@style/label_text">
+                    android:textColorHint="@color/md_white">
 
-                    <EditText
-                        android:enabled="false"
-                        android:id="@+id/eRiwayat1PasienNama2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nama Pasien"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white">
-
-                    </EditText>
-
-                </android.support.design.widget.TextInputLayout>
+                </EditText>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true">
 
-                    <ImageView
-                        android:id="@+id/imgPilihPasienRiwayat1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@mipmap/ic_action_search_white"/>
-
                     <ImageButton
                         android:id="@+id/btnRiwayatAddPasien"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
-                        android:layout_margin="@dimen/MarginLayout"
+                        android:layout_marginRight="5dp"
                         android:background="@drawable/slctcycleadd"
                         android:src="@mipmap/ic_action_add_purple" />
+
                 </LinearLayout>
-
-
 
             </RelativeLayout>
 

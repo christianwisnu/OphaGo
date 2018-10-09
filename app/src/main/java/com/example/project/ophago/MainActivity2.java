@@ -35,6 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     @BindView(R.id.txtMainNama)TextView txtNama;
     @BindView(R.id.imgLogout)ImageView imgLogout;
+    @BindView(R.id.imgMainPasienBaru)ImageView imgNewTrans;
     @BindView(R.id.imgMainHistoryPasien)ImageView imgHistory;
 
     private PrefUtil pref;
@@ -42,12 +43,11 @@ public class MainActivity2 extends AppCompatActivity {
     private String userName;
     private RequestPermissionHandler mRequestPermissionHandler;
     private List<String> listPermissionsNeeded;
-    private String[] items = {"Baru", "Lama"};
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        //Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             mRequestPermissionHandler = new RequestPermissionHandler();
             checkAndRequestPermissions();
@@ -107,6 +107,13 @@ public class MainActivity2 extends AppCompatActivity {
         startActivity(new Intent(MainActivity2.this, Login.class));
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
+    }
+
+    @OnClick(R.id.imgMainPasienBaru)
+    protected void baru(){
+        Intent a = new Intent(MainActivity2.this, AddDataPasien2.class);
+        a.putExtra("status","NEW");
+        startActivity(a);
     }
 
     @OnClick(R.id.imgMainHistoryPasien)

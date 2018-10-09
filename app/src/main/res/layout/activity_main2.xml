@@ -78,6 +78,38 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/imgMainPasienBaru"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/endoskop_tri_30"/>
+
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/md_purple_600"
+                    android:text="Pemeriksaan"
+                    android:textStyle="normal"
+                    android:textSize="14dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/md_purple_600">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
                     android:id="@+id/imgMainHistoryPasien"
                     android:layout_width="70dp"
                     android:layout_height="70dp"

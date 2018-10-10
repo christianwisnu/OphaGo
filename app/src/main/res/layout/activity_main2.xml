@@ -49,13 +49,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/md_purple_600"
-                android:text="Selamat Datang"
+                android:text="Selamat Datang,"
                 android:textStyle="normal"
                 android:textSize="20dp"/>
 
             <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_purple_600"
+                android:text="Dokter"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
                 android:id="@+id/txtMainNama"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/md_purple_600"

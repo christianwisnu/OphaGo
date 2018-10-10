@@ -167,11 +167,11 @@ public class LaporanPemeriksaan extends AppCompatActivity {
             public void onClick(View v) {
                 if(allPasien){
                     allPasien=false;
-                    //imgPilihPasien.setVisibility(View.VISIBLE);
+                    edNamaPasien.setEnabled(true);
                 }else{
                     allPasien=true;
                     edNamaPasien.setText(null);
-                    //imgPilihPasien.setVisibility(View.INVISIBLE);
+                    edNamaPasien.setEnabled(false);
                 }
             }
         });
@@ -181,8 +181,6 @@ public class LaporanPemeriksaan extends AppCompatActivity {
             public void onClick(View v) {
                 if(allPeriode){
                     allPeriode=false;
-                    //imgTglFrom.setVisibility(View.VISIBLE);
-                    //imgTglTo.setVisibility(View.VISIBLE);
                 }else{
                     allPeriode=true;
                     edTglFrom.setText(null);
@@ -191,8 +189,6 @@ public class LaporanPemeriksaan extends AppCompatActivity {
                     edTglTo.setText(null);
                     hasilTglTo=null;
                     tglTo=null;
-                    //imgTglFrom.setVisibility(View.INVISIBLE);
-                    //imgTglTo.setVisibility(View.INVISIBLE);
                 }
             }
         });

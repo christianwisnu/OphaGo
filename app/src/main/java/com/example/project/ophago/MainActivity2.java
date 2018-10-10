@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             mRequestPermissionHandler = new RequestPermissionHandler();
             checkAndRequestPermissions();
@@ -111,8 +111,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     @OnClick(R.id.imgMainPasienBaru)
     protected void baru(){
-        Intent a = new Intent(MainActivity2.this, AddDataPasien2.class);
-        a.putExtra("status","NEW");
+        Intent a = new Intent(MainActivity2.this, DataPasien2.class);
+        a.putExtra("Status",1);
         startActivity(a);
     }
 

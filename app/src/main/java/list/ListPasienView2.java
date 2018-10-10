@@ -1,6 +1,8 @@
 package list;
 
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
@@ -96,7 +98,9 @@ public class ListPasienView2 extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         MenuItem search = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+        search.expandActionView();
+        searchView.requestFocus();
         search(searchView);
         return true;
     }

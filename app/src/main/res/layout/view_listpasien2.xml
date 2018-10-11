@@ -25,7 +25,7 @@
                     android:id="@+id/txt_view_pasien_nama2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:text="Small Text"
                     android:layout_marginTop="5dp"
                     android:textSize="17dp"
@@ -37,14 +37,14 @@
                     android:layout_height="wrap_content"
                     android:text="Medium Text"
                     android:textSize="15dp"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/txt_view_pasien_alamat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:text="Small Text"
                     android:textSize="15dp"
                     android:visibility="gone"/>
@@ -53,7 +53,7 @@
                     android:id="@+id/txt_view_pasien_telp2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:text="Small Text"
                     android:textSize="15dp"
                     android:visibility="gone"/>
@@ -62,7 +62,7 @@
                     android:id="@+id/txt_view_pasien_tgl2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:text="Small Text"
                     android:textSize="15dp"
                     android:visibility="visible"/>
@@ -71,7 +71,7 @@
                     android:id="@+id/txt_view_pasien_gender2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/md_black"
                     android:text="Small Text"
                     android:textSize="15dp"
                     android:visibility="visible"/>

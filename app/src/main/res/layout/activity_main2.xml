@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/md_purple_600"
+                android:textColor="@color/defaultapk"
                 android:text="Selamat Datang,"
                 android:textStyle="normal"
                 android:textSize="20dp"/>
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/md_purple_600"
+                android:textColor="@color/defaultapk"
                 android:text="Dokter"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
@@ -67,7 +67,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/md_purple_600"
+                android:textColor="@color/defaultapk"
                 android:text="NAMA"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
@@ -108,7 +108,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
-                android:background="@color/md_purple_600">
+                android:background="@color/defaultapk">
 
             </LinearLayout>
 

@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/md_purple_700"
+            android:textColor="@color/defaultapk"
             android:textSize="20dp"
             android:text="DATA DAN RIWAYAT PASIEN"
             android:textStyle="bold"/>
@@ -35,7 +35,7 @@
             android:layout_height="200dp"
             android:layout_margin="10dp"
             android:orientation="vertical"
-            android:background="@color/md_purple_700">
+            android:background="@color/defaultapk">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -51,14 +51,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nama Pasien"
-                        android:textColor="@color/md_white"/>
+                        android:textColor="@color/md_grey_50"/>
 
                     <EditText
                         android:id="@+id/eRiwayat1PasienNama2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white">
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50">
 
                     </EditText>
 
@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Periode: "
-                    android:textColor="@color/md_white"
+                    android:textColor="@color/md_grey_50"
                     android:textSize="15dp"/>
 
             </LinearLayout>
@@ -111,7 +111,7 @@
                     android:enabled="false"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:textColor="@color/md_white"/>
+                    android:textColor="@color/md_grey_50"/>
 
                 <ImageView
                     android:layout_marginLeft="3dp"
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="s/d"
-                    android:textColor="@color/md_white"
+                    android:textColor="@color/md_grey_50"
                     android:textSize="15dp" />
 
                 <EditText
@@ -135,7 +135,7 @@
                     android:layout_width="110dp"
                     android:textSize="15dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_white"/>
+                    android:textColor="@color/md_grey_50"/>
 
                 <ImageView
                     android:layout_marginLeft="3dp"
@@ -159,8 +159,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Semua Pasien"
-                    android:textColor="@color/md_white"
-                    android:buttonTint="@color/md_white"/>
+                    android:textColor="@color/md_grey_50"
+                    android:buttonTint="@color/md_grey_50"/>
 
                 <CheckBox
                     android:layout_marginLeft="10dp"
@@ -168,8 +168,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Semua Periode"
-                    android:textColor="@color/md_white"
-                    android:buttonTint="@color/md_white"/>
+                    android:textColor="@color/md_grey_50"
+                    android:buttonTint="@color/md_grey_50"/>
 
             </LinearLayout>
 
@@ -189,8 +189,8 @@
                 android:text="PROSES"
                 android:textSize="17dp"
                 android:textStyle="normal"
-                android:textColor="@color/md_white"
-                android:background="@drawable/slctpurplebutton"
+                android:textColor="@color/md_grey_50"
+                android:background="@drawable/slctdefaultbutton"
                 />
 
             <Button
@@ -201,8 +201,8 @@
                 android:text="PEMERIKSAAN"
                 android:textSize="17dp"
                 android:textStyle="normal"
-                android:textColor="@color/md_white"
-                android:background="@drawable/slctpurplebutton"
+                android:textColor="@color/md_grey_50"
+                android:background="@drawable/slctdefaultbutton"
                 />
 
         </LinearLayout>

@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="KELUHAN UTAMA"
-            android:textColor="@color/md_purple_700"
+            android:textColor="@color/defaultapk"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -43,8 +43,8 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords|textMultiLine"
             android:hint="Keluhan Pasien"
-            android:textColor="@color/md_purple_700"
-            android:textColorHint="@color/md_purple_700"
+            android:textColor="@color/md_black"
+            android:textColorHint="@color/md_black"
             android:gravity="top"
             android:ems="10"/>
 
@@ -59,7 +59,7 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@color/md_purple_700"
+                android:background="@color/defaultapk"
                 android:text="Lanjutkan"
                 android:textColor="@color/md_white"
                 android:textSize="18dp"

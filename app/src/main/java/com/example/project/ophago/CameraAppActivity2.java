@@ -94,7 +94,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
         }
     }
     public void startRecording(){
-        sdbname = (Utils.getDateTimeNameFile()+".mp4");
+        sdbname = (Utils.getDateTimeNameFile()+"-"+bagian+".mp4");
         Utils.writeVideoToSDFile(sdbname);
         File mediaFile = new File( Environment.getExternalStorageDirectory() +
                 "/" + "OphaGo/Video"+ "/" +sdbname);

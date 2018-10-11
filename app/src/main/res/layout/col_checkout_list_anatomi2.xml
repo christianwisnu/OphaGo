@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="NAMA"
                 android:textSize="17dp"
-                android:textColor="@color/md_purple_700"/>
+                android:textColor="@color/md_black"/>
 
         </LinearLayout>
 

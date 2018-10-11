@@ -121,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/slctpurplebutton"
+                        android:background="@drawable/slctdefaultbutton"
                         android:text="LOGIN"
                         android:textColor="@color/md_white"
                         android:textSize="20dp" />
@@ -133,10 +133,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center|right"
                         android:text="Sign Up"
-                        android:textColor="@color/md_purple_700"
+                        android:textColor="@color/md_black"
                         android:textSize="15dp"
                         android:layout_marginTop="10dp"
-                        android:textStyle="normal" />
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>

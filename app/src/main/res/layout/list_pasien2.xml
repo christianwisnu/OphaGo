@@ -17,7 +17,7 @@
             android:id="@+id/toolbarPasien2"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/md_purple_600"
+            android:background="@color/defaultapk"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </android.support.design.widget.AppBarLayout>

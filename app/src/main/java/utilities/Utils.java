@@ -123,7 +123,7 @@ public class Utils {
 
     public static String getDateTimeNameFile() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyyMMddHHmmss", Locale.getDefault());
+                "yyyyMMddHHmm", Locale.getDefault());
         Date date = new Date();
         return dateFormat.format(date);
     }

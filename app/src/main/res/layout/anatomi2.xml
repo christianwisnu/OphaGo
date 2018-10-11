@@ -42,7 +42,7 @@
                     android:text="PILIH PEMERIKSAAN"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textColor="@color/md_purple_700"
+                    android:textColor="@color/defaultapk"
                     android:gravity="center"/>
 
             </LinearLayout>
@@ -73,7 +73,7 @@
                         android:layout_height="50dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/cardcyclepurple"
+                        android:background="@drawable/cardcycledefault"
                         android:gravity="center"
                         android:text="MATA"
                         android:textColor="@color/md_white"
@@ -118,7 +118,7 @@
                         android:layout_height="50dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/cardcyclepurple"
+                        android:background="@drawable/cardcycledefault"
                         android:gravity="center"
                         android:text="MATA"
                         android:textColor="@color/md_white"
@@ -141,7 +141,6 @@
                             android:textColor="@color/md_black"/>
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 

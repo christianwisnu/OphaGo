@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_white">
+    android:background="@color/md_grey_50">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="INPUT DATA PASIEN BARU"
                 android:textSize="22dp"
-                android:textColor="@color/md_purple_700"
+                android:textColor="@color/defaultapk"
                 android:textStyle="bold"
                 android:gravity="center"/>
 
@@ -32,7 +32,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/md_purple_700"
+                android:background="@color/defaultapk"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -48,8 +48,8 @@
                         android:id="@+id/input_layout_datapasien_kode2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"
                         app:errorTextAppearance="@style/error_appearance"
                         app:hintTextAppearance="@style/label_text">
 
@@ -60,8 +60,8 @@
                             android:hint="Kode Pasien"
                             android:enabled="false"
                             android:inputType="textCapWords"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white"/>
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50"/>
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -79,8 +79,8 @@
                         android:id="@+id/input_layout_datapasien_nama2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"
                         app:errorTextAppearance="@style/error_appearance"
                         app:hintTextAppearance="@style/label_text">
 
@@ -93,8 +93,8 @@
                             android:inputType="textCapWords"
                             android:nextFocusForward="@+id/eDataPasienAlamat2"
                             android:ems="10"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white">
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50">
                             <requestFocus />
 
                         </EditText>
@@ -115,8 +115,8 @@
                         android:id="@+id/input_layout_datapasien_alamat2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"
                         app:errorTextAppearance="@style/error_appearance"
                         app:hintTextAppearance="@style/label_text">
 
@@ -129,8 +129,8 @@
                             android:inputType="textCapWords"
                             android:nextFocusForward="@+id/eDataPasienTelp2"
                             android:ems="10"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white"/>
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50"/>
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -148,8 +148,8 @@
                         android:id="@+id/input_layout_datapasien_telp2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"
                         app:errorTextAppearance="@style/error_appearance"
                         app:hintTextAppearance="@style/label_text">
 
@@ -161,8 +161,8 @@
                             android:inputType="phone"
                             android:imeOptions="actionDone"
                             android:ems="10"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white"/>
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50"/>
 
                     </android.support.design.widget.TextInputLayout>
 
@@ -183,8 +183,8 @@
                         android:hint="Tanggal Lahir"
                         android:clickable="true"
                         android:focusableInTouchMode="true"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"/>
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -209,8 +209,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Jenis Kelamin : "
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white"
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50"
                         android:textSize="18dp"/>
 
                     <RadioGroup
@@ -219,8 +219,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:textColor="@color/md_white"
-                        android:textColorHint="@color/md_white">
+                        android:textColor="@color/md_grey_50"
+                        android:textColorHint="@color/md_grey_50">
 
                         <RadioButton
                             android:buttonTint="@color/md_white"
@@ -228,8 +228,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Laki-laki"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white"
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50"
                             android:layout_marginRight="20dp"
                             android:textSize="16dp"/>
 
@@ -239,8 +239,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Perempuan"
-                            android:textColor="@color/md_white"
-                            android:textColorHint="@color/md_white"
+                            android:textColor="@color/md_grey_50"
+                            android:textColorHint="@color/md_grey_50"
                             android:textSize="16dp"/>
 
                     </RadioGroup>
@@ -253,7 +253,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="20dp"
-                android:background="@color/md_grey_300"
+                android:background="@color/md_grey_50"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -271,7 +271,7 @@
                         android:layout_marginTop="20dp"
                         android:background="@drawable/slctpurplebutton"
                         android:text="simpan"
-                        android:textColor="@color/md_white"
+                        android:textColor="@color/md_grey_50"
                         android:textSize="18dp"
                         android:visibility="gone"/>
 
@@ -280,9 +280,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/slctpurplebutton"
+                        android:background="@drawable/slctdefaultbutton"
                         android:text="simpan lanjutkan"
-                        android:textColor="@color/md_white"
+                        android:textColor="@color/md_grey_50"
                         android:textSize="18dp" />
 
                 </LinearLayout>

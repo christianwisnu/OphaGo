@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textColor="@color/md_purple_700"
+        android:textColor="@color/defaultapk"
         android:textSize="25dp"
         android:text="Kirim Email"
         android:gravity="center"
@@ -65,7 +65,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/et_message"
                 android:layout_margin="5dp"
-                android:background="@drawable/slctpurplebutton"
+                android:background="@drawable/slctdefaultbutton"
                 android:textColor="@color/md_white"
                 android:text="Send" />
 

@@ -1,6 +1,8 @@
 package model.transaksi;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
@@ -194,6 +196,16 @@ public class TransaksiHeaderModel implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getPathGbr(Integer nomor) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        Method m = getClass().getMethod("getPathGbr"+nomor);
+        return (String)m.invoke(this);
+    }
+
+    public void setPathGbr(Integer nomor, String pathFoto) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        Method m = getClass().getMethod("setPathGbr"+nomor, String.class);
+        m.invoke(this, pathFoto);
     }
 
     public String getPathGbr1() {

@@ -95,7 +95,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
     }
 
     public void startRecording(){
-        sdbname = (Utils.getDateTimeNameFile()+"-"+bagian+".mp4");
+        sdbname = (Utils.getDateTimeNameFile()+".mp4");
         Utils.writeVideoToSDFile(sdbname);
         File mediaFile = new File( Environment.getExternalStorageDirectory() +
                 "/" + "OphaGo/Video"+ "/" +sdbname);
@@ -117,6 +117,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
             i.putExtra("fileuri", hasilUri.toString());
             i.putExtra("object", model);
             i.putExtra("namaFile", sdbname);
+            i.putExtra("bagian", bagian);
             startActivityForResult(i, SCREENSHOOT);
         }else{
             Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();

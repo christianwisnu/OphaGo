@@ -36,7 +36,7 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
     private VideoView mVideoView;
     private Button btnSs;
     private int line;
-    private String sdbname, video, namaFileVideo;
+    private String sdbname, video, namaFileVideo, bagian;
     private Uri fileUri;
     private Bitmap mbitmap;
     private int count=0, position=0;
@@ -54,6 +54,7 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
         line = i.getIntExtra("line",0);
         model = (TransaksiModel) i.getSerializableExtra("object");
         namaFileVideo = i.getStringExtra("namaFile");
+        bagian = i.getStringExtra("bagian");
 
         mVideoView = (VideoView)findViewById(R.id.surface_view);
         //audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
@@ -152,7 +153,7 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
 
     public void createImage(Bitmap bmp) {
         File sd = Environment.getExternalStorageDirectory();
-        sdbname = (Utils.getDateTimeNameFile()+".jpg");
+        sdbname = (Utils.getDateTimeNameFile()+"-"+bagian+".jpg");
         Utils.writeToImgSDFile( sdbname);
         String backupDBPath = "OphaGo/Image/"+sdbname;
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();

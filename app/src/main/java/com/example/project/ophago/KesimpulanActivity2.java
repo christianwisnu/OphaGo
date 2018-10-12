@@ -622,12 +622,36 @@ public class KesimpulanActivity2 extends AppCompatActivity {
 
             pFoto1=new Paragraph();
             pFoto1.setAlignment(Element.ALIGN_CENTER);
-            if(header.getHeader().getPathGbr1()!=null ){
-                if(!header.getHeader().getPathGbr1().trim().equals("")){
-                    String[] a = header.getHeader().getPathGbr1().split("/");
+            Map<String, Map<String, Integer>> data = new HashMap<String, Map<String, Integer>>();
+            for(int i=1;i<=6;i++){
+                if(header.getHeader().getPathGbr(i)!=null){
+                    if(!header.getHeader().getPathGbr(i).trim().equals("")){
+                        String[] a = header.getHeader().getPathGbr(i).split("-");
+                        String[] b = a[a.length-1].split("\\.");
+                        String namaAnatomi = b[0];
+                        if (data.get(namaAnatomi) == null) {
+                            Map<String, Integer> detail = new HashMap<String, Integer>();
+                            detail.put(String.valueOf(i), i);
+                            data.put(namaAnatomi.trim(), detail);
+                        }else{
+                            Map<String, Integer> detail = data.get(namaAnatomi.trim());
+                            detail.put(String.valueOf(i), i);
+                        }
+                    }
+                }
+            }
+
+            for (String key : data.keySet()) {
+                Map<String, Integer> detail = data.get(key);
+                pFoto1.add(new Chunk(key, paraFont3));
+                for(String keyDetail : detail.keySet()){
+                    Integer nomor = detail.get(keyDetail);
+                    String[] a = header.getHeader().getPathGbr(nomor).split("/");
                     File pdfFile = new File(Environment.getExternalStorageDirectory() +
                             "/" + "OphaGo/Image" + "/" + a[a.length-1]);
                     if(pdfFile.exists()){
+                        pFoto1.setTabSettings(new TabSettings(20f));
+                        pFoto1.add(Chunk.TABBING);
                         Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
                                 ".com.example.project.ophago.provider", pdfFile);
                         //Uri fileUri=Uri.parse(header.getPathGbr1());
@@ -641,124 +665,11 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                         pFoto1.add(new Phrase(new Chunk(image, 0, 0, true)));
                     }
                 }
+                doc.add(pFoto1);
+                doc.add(pSpace1);
+                pFoto1=new Paragraph();
+                pFoto1.setAlignment(Element.ALIGN_CENTER);
             }
-            if(header.getHeader().getPathGbr2()!=null ){
-                if(!header.getHeader().getPathGbr2().trim().equals("")){
-                    pFoto1.setTabSettings(new TabSettings(20f));
-                    pFoto1.add(Chunk.TABBING);
-                    String[] a = header.getHeader().getPathGbr2().split("/");
-                    File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
-                    if(pdfFile.exists()) {
-                        Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.ophago.provider", pdfFile);
-                        //Uri fileUri=Uri.parse(header.getPathGbr2());
-                        InputStream ims = getContentResolver().openInputStream(path);
-                        Bitmap bmp = BitmapFactory.decodeStream(ims);
-                        Bitmap circularBitmap = Utils.getRoundedCornerBitmap(bmp, 100);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        circularBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                        Image image = Image.getInstance(stream.toByteArray());
-                        image.scaleToFit(120, 120);
-                        pFoto1.add(new Phrase(new Chunk(image, 0, 0, true)));
-                    }
-                }
-            }
-            if(header.getHeader().getPathGbr3()!=null ){
-                if(!header.getHeader().getPathGbr3().trim().equals("")){
-                    pFoto1.setTabSettings(new TabSettings(20f));
-                    pFoto1.add(Chunk.TABBING);
-                    String[] a = header.getHeader().getPathGbr3().split("/");
-                    File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
-                    if(pdfFile.exists()) {
-                        Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.ophago.provider", pdfFile);
-                        //Uri fileUri=Uri.parse(header.getPathGbr3());
-                        InputStream ims = getContentResolver().openInputStream(path);
-                        Bitmap bmp = BitmapFactory.decodeStream(ims);
-                        Bitmap circularBitmap = Utils.getRoundedCornerBitmap(bmp, 100);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        circularBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                        Image image = Image.getInstance(stream.toByteArray());
-                        image.scaleToFit(120, 120);
-                        pFoto1.add(new Phrase(new Chunk(image, 0, 0, true)));
-                    }
-                }
-            }
-            doc.add(pFoto1);
-            doc.add(pSpace1);
-
-            pFoto2=new Paragraph();
-            pFoto2.setAlignment(Element.ALIGN_CENTER);
-            if(header.getHeader().getPathGbr4()!=null){
-                if(!header.getHeader().getPathGbr4().trim().equals("")){
-                    pFoto2.setTabSettings(new TabSettings(20f));
-                    pFoto2.add(Chunk.TABBING);
-                    String[] a = header.getHeader().getPathGbr4().split("/");
-                    File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
-                    if(pdfFile.exists()) {
-                        Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.ophago.provider", pdfFile);
-                        //Uri fileUri=Uri.parse(header.getPathGbr4());
-                        InputStream ims = getContentResolver().openInputStream(path);
-                        Bitmap bmp = BitmapFactory.decodeStream(ims);
-                        Bitmap circularBitmap = Utils.getRoundedCornerBitmap(bmp, 100);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        circularBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                        Image image = Image.getInstance(stream.toByteArray());
-                        image.scaleToFit(120, 120);
-                        pFoto2.add(new Phrase(new Chunk(image, 0, 0, true)));
-                    }
-                }
-            }
-            if(header.getHeader().getPathGbr5()!=null ){
-                if(!header.getHeader().getPathGbr5().trim().equals("")){
-                    pFoto2.setTabSettings(new TabSettings(20f));
-                    pFoto2.add(Chunk.TABBING);
-                    String[] a = header.getHeader().getPathGbr5().split("/");
-                    File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
-                    if(pdfFile.exists()) {
-                        Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.ophago.provider", pdfFile);
-                        //Uri fileUri=Uri.parse(header.getPathGbr5());
-                        InputStream ims = getContentResolver().openInputStream(path);
-                        Bitmap bmp = BitmapFactory.decodeStream(ims);
-                        Bitmap circularBitmap = Utils.getRoundedCornerBitmap(bmp, 100);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        circularBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                        Image image = Image.getInstance(stream.toByteArray());
-                        image.scaleToFit(120, 120);
-                        pFoto2.add(new Phrase(new Chunk(image, 0, 0, true)));
-                    }
-                }
-            }
-            if(header.getHeader().getPathGbr6()!=null){
-                if(!header.getHeader().getPathGbr6().trim().equals("")){
-                    pFoto2.setTabSettings(new TabSettings(20f));
-                    pFoto2.add(Chunk.TABBING);
-                    String[] a = header.getHeader().getPathGbr6().split("/");
-                    File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                            "/" + "OphaGo/Image" + "/" + a[a.length-1]);
-                    if(pdfFile.exists()) {
-                        Uri path = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() +
-                                ".com.example.project.ophago.provider", pdfFile);
-                        //Uri fileUri=Uri.parse(header.getPathGbr6());
-                        InputStream ims = getContentResolver().openInputStream(path);
-                        Bitmap bmp = BitmapFactory.decodeStream(ims);
-                        Bitmap circularBitmap = Utils.getRoundedCornerBitmap(bmp, 100);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        circularBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                        Image image = Image.getInstance(stream.toByteArray());
-                        image.scaleToFit(120, 120);
-                        pFoto2.add(new Phrase(new Chunk(image, 0, 0, true)));
-                    }
-                }
-            }
-            doc.add(pSpace1);
-            doc.add(pFoto2);
 
             doc.add(p5);
             p15.setAlignment(Paragraph.ALIGN_LEFT);
@@ -800,6 +711,8 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             Log.e("PDFCreator", "DocumentException:" + de);
         } catch (IOException e) {
             Log.e("PDFCreator", "ioException:" + e);
+        } catch (Exception e) {
+            Log.e("PDFCreator", "Exception:" + e);
         }
         finally {
             doc.close();

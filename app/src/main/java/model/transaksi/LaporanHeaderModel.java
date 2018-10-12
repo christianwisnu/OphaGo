@@ -1,6 +1,8 @@
 package model.transaksi;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -213,6 +215,16 @@ public class LaporanHeaderModel implements Serializable {
 
     public void setItemList(List<LaporanItemModel> itemList) {
         this.itemList = itemList;
+    }
+
+    public String getPathGbr(Integer nomor) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        Method m = getClass().getMethod("getPathGbr"+nomor);
+        return (String)m.invoke(this);
+    }
+
+    public void setPathGbr(Integer nomor, String pathFoto) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        Method m = getClass().getMethod("setPathGbr"+nomor, String.class);
+        m.invoke(this, pathFoto);
     }
 
     public String getPathGbr1() {

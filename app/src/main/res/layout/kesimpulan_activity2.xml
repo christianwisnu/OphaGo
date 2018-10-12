@@ -324,9 +324,9 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="120dp"
+                                android:layout_width="160dp"
                                 android:layout_height="90dp"
-                                android:background="@drawable/mata_kanan"/>
+                                android:background="@drawable/mata_new"/>
 
                             <TextView
                                 android:layout_marginTop="20dp"
@@ -371,9 +371,9 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="120dp"
+                                android:layout_width="160dp"
                                 android:layout_height="90dp"
-                                android:background="@drawable/mata_kiri"/>
+                                android:background="@drawable/mata_new"/>
 
                             <TextView
                                 android:layout_marginTop="20dp"

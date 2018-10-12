@@ -80,7 +80,6 @@ public class ListPasienView2 extends AppCompatActivity {
                     Toast.makeText(ListPasienView2.this, "Tidak Ada Data!", Toast.LENGTH_LONG).show();
                 }
                 mAdapter = new AdpListPasien2(ListPasienView2.this, mArrayList);
-                //assert mRecyclerView != null;
                 mRecyclerView.setAdapter(mAdapter);
                 progress.dismiss();
             }

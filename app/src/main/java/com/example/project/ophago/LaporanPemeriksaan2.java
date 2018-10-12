@@ -61,7 +61,6 @@ import utilities.Utils;
 
 public class LaporanPemeriksaan2 extends AppCompatActivity {
 
-    private ProgressDialog pDialog;
     private AdpTransaksi2 adapter;
     private ListView lsvupload;
     private LaporanModel model2;
@@ -87,8 +86,6 @@ public class LaporanPemeriksaan2 extends AppCompatActivity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.riwayat2);
-        pDialog = new ProgressDialog(this);
-        pDialog.setCancelable(false);
         Intent i = getIntent();
         item = (ListTransaksi) i.getSerializableExtra("object");
         model2 = (LaporanModel) i.getSerializableExtra("model");

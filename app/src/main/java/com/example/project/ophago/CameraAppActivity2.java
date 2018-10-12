@@ -93,6 +93,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
             Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();
         }
     }
+
     public void startRecording(){
         sdbname = (Utils.getDateTimeNameFile()+"-"+bagian+".mp4");
         Utils.writeVideoToSDFile(sdbname);
@@ -121,6 +122,7 @@ public class CameraAppActivity2 extends ActionBarActivity {
             Toast.makeText (CameraAppActivity2.this, "Video tidak ada", Toast.LENGTH_LONG).show ();
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -128,8 +130,6 @@ public class CameraAppActivity2 extends ActionBarActivity {
             if (resultCode == RESULT_OK){
                 Uri uri = data.getData();
                 hasilUri = uri;
-                Toast.makeText(this, "Video has been saved to:\n" +
-                        data.getData(), Toast.LENGTH_LONG).show();
                 sukses=1;
                 for(TransaksiItemModel itemModel:model.getItemList()){
                     if(itemModel.getLine().intValue()==line){
@@ -145,13 +145,11 @@ public class CameraAppActivity2 extends ActionBarActivity {
                 Toast.makeText(this, "Failed to record video",
                         Toast.LENGTH_LONG).show();
             }
-            //TODO ke screenshoot
             screenshoot();
         }else if(requestCode == SCREENSHOOT){
             if(resultCode == RESULT_OK){
                 model = (TransaksiModel) data.getSerializableExtra("object");
             }
-            //TODO stlh dari screenshoot, keluar ke checkoutList tadi
             lanjutkan();
         }else if(requestCode == MANUAL_RECORDING){
             if(resultCode == RESULT_OK){

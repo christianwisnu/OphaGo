@@ -68,10 +68,6 @@ public class ViewVideoActivity extends AppCompatActivity {//implements GestureDe
         mVideoView.setMediaController(new MediaController(this));
         mVideoView.requestFocus();
         mediaMetadataRetriever = new MediaMetadataRetriever();
-        /*File pdfFile = new File(Environment.getExternalStorageDirectory() +
-                "/" + directory + "/" + file);
-        Uri path = FileProvider.getUriForFile(KesimpulanActivity2.this, getApplicationContext().getPackageName() +
-                ".com.example.project.ophago.provider", pdfFile);*/
         mediaMetadataRetriever.setDataSource(this, fileUri);
 
         mediaController = new MediaController(this);

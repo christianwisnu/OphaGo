@@ -78,20 +78,6 @@
 
             </LinearLayout>
 
-            <!--<LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="-80dp">
-
-                <ImageView
-                    android:id="@+id/imgPilihListPasien"
-                    android:background="@drawable/img_button_proses"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp" />
-
-            </LinearLayout>-->
-
         </LinearLayout>
 
     </LinearLayout>

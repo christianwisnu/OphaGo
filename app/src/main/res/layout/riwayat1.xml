@@ -77,7 +77,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/slctcycleadd"
-                        android:src="@mipmap/ic_action_add_purple" />
+                        android:src="@mipmap/ic_action_add" />
 
                 </LinearLayout>
 

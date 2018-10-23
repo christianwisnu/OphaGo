@@ -99,6 +99,7 @@ public class KesimpulanActivity2 extends AppCompatActivity {
     private static final int VIEW_PDF = 77;
 
     @BindView(R.id.linHeader)LinearLayout lineHeader;
+    @BindView(R.id.imgKesimpulanBack)ImageView imgBack;
     @BindView(R.id.txtJudulKesimpulan)TextView txtJudul;
     @BindView(R.id.imgExpandPasien2)
     ImageView imgColExpPasien;
@@ -178,7 +179,7 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     ckMtKr.setChecked(true);
                 }
             }
-            txtJudul.setText("KESIMPULAN");
+            txtJudul.setText("Kesimpulan");
             lineHeader.setVisibility(View.VISIBLE);
         }else{
             laporanModel = (LaporanHeaderModel) i.getSerializableExtra("object");
@@ -199,7 +200,7 @@ public class KesimpulanActivity2 extends AppCompatActivity {
                     ckMtKr.setChecked(true);
                 }
             }
-            txtJudul.setText("EDIT KESIMPULAN");
+            txtJudul.setText("Edit Kesimpulan");
             lineHeader.setVisibility(View.GONE);
         }
         pDialog = new ProgressDialog(this);
@@ -210,6 +211,11 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             shared  = prefUtil.getUserInfo();
             userId  = shared.getString(PrefUtil.ID, null);
         }catch (Exception e){e.getMessage();}
+    }
+
+    @OnClick(R.id.imgKesimpulanBack)
+    protected void back(){
+        finish();
     }
 
     @OnClick(R.id.btnKesimpulanSave2)

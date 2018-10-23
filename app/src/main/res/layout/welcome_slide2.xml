@@ -12,9 +12,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="280dp"
+            android:layout_width="380dp"
             android:layout_height="380dp"
-            android:src="@drawable/endoskop_tri_20" />
+            android:src="@drawable/layerduawelcome" />
 
     </LinearLayout>
 

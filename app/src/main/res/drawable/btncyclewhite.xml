@@ -27,6 +27,9 @@
         <item>
             <shape android:shape="oval">
                 <solid android:color="#10000000"/>
+                <stroke
+                    android:width="1dp"
+                    android:color="@color/defaultapk" />
                 <padding
                     android:bottom="2px"
                     android:left="2px"
@@ -41,6 +44,9 @@
 <item>
     <shape android:shape="oval">
         <solid android:color="@color/White_Snow"/>
+        <stroke
+            android:width="1dp"
+            android:color="@color/defaultapk" />
     </shape>
 </item>
 </layer-list>

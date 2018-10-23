@@ -47,26 +47,44 @@
             android:orientation="horizontal"
             android:layout_alignParentRight="true">
 
-            <ImageView
-                android:id="@+id/imgColPrintPdf"
+            <Button
+                android:id="@+id/btn_col_trans2_printpdf"
                 android:layout_marginLeft="5dp"
-                android:layout_width="35dp"
+                android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:background="@drawable/img_button_pdf" />
+                android:background="@drawable/slctdefaultborderbutton"
+                android:text="PDF"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/defaultapk"
+                android:padding="1dp"
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/imgColEmailPdf"
-                android:layout_width="35dp"
+            <Button
+                android:id="@+id/btn_col_trans2_email"
                 android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:background="@drawable/img_button_mail" />
+                android:background="@drawable/slctdefaultborderbutton"
+                android:text="EMAIL"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/defaultapk"
+                android:padding="1dp"
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/imgColEdiTrans"
+            <Button
+                android:id="@+id/btn_col_trans2_edit"
                 android:layout_marginLeft="5dp"
-                android:layout_width="35dp"
+                android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:background="@drawable/img_button_edit" />
+                android:background="@drawable/slctdefaultborderbutton"
+                android:text="EDIT"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/defaultapk"
+                android:padding="1dp"
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.example.project.ophago;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -28,7 +29,8 @@ public class ImageAreasActivity2 extends AppCompatActivity {
 
     @BindView(R.id.ckMataKanan)CheckBox ckMtKn;
     @BindView(R.id.ckMataKiri)CheckBox ckMtKr;
-    @BindView(R.id.img_anatomi_lanjutkan)ImageView imgNext;
+    @BindView(R.id.btn_pasien_anatomi_lanjut2)Button imgNext;
+    @BindView(R.id.imgAnatomiBack)ImageView imgBack;
 
     private boolean tlKn=false, tlKr=false, hdKn=false, hdKr=false, tgr=false, mlt=false;
     private TransaksiModel model;
@@ -46,7 +48,7 @@ public class ImageAreasActivity2 extends AppCompatActivity {
         refreshAll();
     }
 
-    @OnClick(R.id.img_anatomi_lanjutkan)
+    @OnClick(R.id.btn_pasien_anatomi_lanjut2)
     protected void lanjut(){
         if(list.isEmpty()){
             Toast.makeText (ImageAreasActivity2.this, "Pilih salah satu dari bagian pemeriksaan", Toast.LENGTH_SHORT).show ();
@@ -64,6 +66,11 @@ public class ImageAreasActivity2 extends AppCompatActivity {
             i.putExtra("object",model);
             startActivityForResult(i,10);
         }
+    }
+
+    @OnClick(R.id.imgAnatomiBack)
+    protected void back(){
+        finish();
     }
 
     static class Urut implements Comparator {

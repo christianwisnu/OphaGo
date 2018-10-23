@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="400dp"
             android:layout_height="150dp"
-            android:src="@drawable/endoskop_tri_26" />
+            android:src="@drawable/layersatuwelcome" />
 
         <TextView
             android:layout_width="wrap_content"

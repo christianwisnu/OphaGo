@@ -7,16 +7,37 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:background="@drawable/gradient_color"
+        android:layout_height="@dimen/actionbar_dimen">
+
+        <ImageView
+            android:layout_width="@dimen/actionbar_dimen"
+            android:layout_height="@dimen/actionbar_dimen"
+            android:scaleType="centerInside"
+            android:id="@+id/imgKeluhanBack"
+            android:src="@mipmap/ic_action_arrow_left" />
+
+        <TextView
+            style="@style/text_large_bold"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/White_Snow"
+            android:text="Keluhan Utama" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <ImageView
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/endoskop_tri_38"/>
+            android:layout_height="37dp"
+            android:background="@drawable/satu"/>
 
     </LinearLayout>
 
@@ -26,16 +47,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="KELUHAN UTAMA"
-            android:textColor="@color/defaultapk"
-            android:textSize="25dp"
-            android:textStyle="bold"/>
-
         <EditText
             android:layout_marginTop="30dp"
             android:id="@+id/edKeluhanPasien2"
@@ -43,8 +54,6 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords|textMultiLine"
             android:hint="Keluhan Pasien"
-            android:textColor="@color/md_black"
-            android:textColorHint="@color/md_black"
             android:gravity="top"
             android:ems="10"/>
 
@@ -59,9 +68,9 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@color/defaultapk"
+                android:background="@drawable/slctdefaultborderbutton"
                 android:text="Lanjutkan"
-                android:textColor="@color/md_white"
+                android:textColor="@color/defaultapk"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 

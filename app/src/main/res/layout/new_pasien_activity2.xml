@@ -100,9 +100,9 @@
                         android:layout_marginLeft="-80dp"
                         android:layout_marginTop="12dp"
                         android:layout_toRightOf="@id/input_layout_pasien_nama2"
-                        android:background="@drawable/slctcyclewhitecard"
+                        android:background="@drawable/slctcycleadd"
                         android:scaleType="center"
-                        android:src="@mipmap/ic_action_add_purple"
+                        android:src="@mipmap/ic_action_add"
                         android:visibility="invisible" />
 
                     <ImageView

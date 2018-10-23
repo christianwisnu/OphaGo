@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -93,9 +94,9 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
             v= vi.inflate(Resource, null);
             holder.TvNotrans    = 	 (TextView)v.findViewById(R.id.TvColListTransNomor2);
             holder.TvTgl	    =	 (TextView)v.findViewById(R.id.TvColListTransTanggal2);
-            holder.ImgPdf 	    =	 (ImageView) v.findViewById(R.id.imgColPrintPdf);
-            holder.ImgEmail	    =	 (ImageView) v.findViewById(R.id.imgColEmailPdf);
-            holder.ImgEdit	    =	 (ImageView) v.findViewById(R.id.imgColEdiTrans);
+            holder.ImgPdf 	    =	 (Button) v.findViewById(R.id.btn_col_trans2_printpdf);
+            holder.ImgEmail	    =	 (Button) v.findViewById(R.id.btn_col_trans2_email);
+            holder.ImgEdit	    =	 (Button) v.findViewById(R.id.btn_col_trans2_edit);
             v.setTag(holder);
         }else{
             holder 	= (ViewHolder)v.getTag();
@@ -136,9 +137,9 @@ public class AdpTransaksi2 extends ArrayAdapter<LaporanHeaderModel> {
     static class ViewHolder{
         private TextView TvNotrans;
         private TextView TvTgl;
-        private ImageView ImgPdf;
-        private ImageView ImgEmail;
-        private ImageView ImgEdit;
+        private Button ImgPdf;
+        private Button ImgEmail;
+        private Button ImgEdit;
     }
 
     private void createandDisplayPdf2(LaporanHeaderModel header) {

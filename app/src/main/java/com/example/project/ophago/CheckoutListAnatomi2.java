@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -52,7 +53,8 @@ public class CheckoutListAnatomi2 extends AppCompatActivity implements SessionMa
     private TransaksiModel model;
     private AdpCheckoutListAnatomi2 adapter;
     private ListView listku;
-    private ImageView imgProses;
+    private Button btnProses;
+    private ImageView imgBack;
     private List<TransaksiItemModel> columnlist= new ArrayList<TransaksiItemModel>();
     private IntroductoryOverlay mIntroductoryOverlay;
     private MenuItem mMediaRouterButton;
@@ -66,7 +68,8 @@ public class CheckoutListAnatomi2 extends AppCompatActivity implements SessionMa
 
         Intent i = getIntent();
         model = (TransaksiModel) i.getSerializableExtra("object");
-        imgProses = (ImageView)findViewById(R.id.img_checkoutlistpasien_lanjutkan);
+        btnProses = (Button)findViewById(R.id.btn_pasien_checkoutlistpasien_lanjut2);
+        imgBack = (ImageView) findViewById(R.id.imgCheckoutBack);
         listku = (ListView)findViewById(R.id.LsvCheckoutListAnatomiku2);
         columnlist=model.getItemList();
         adapter		= new AdpCheckoutListAnatomi2(CheckoutListAnatomi2.this, model, R.layout.col_checkout_list_anatomi2, columnlist);
@@ -155,7 +158,30 @@ public class CheckoutListAnatomi2 extends AppCompatActivity implements SessionMa
             }
         });*/
 
-        imgProses.setOnClickListener(new View.OnClickListener() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(CheckoutListAnatomi2.this)
+                        .setMessage("Data akan hilang\nBatalkan Pemeriksaan?")
+                        .setNegativeButton(android.R.string.no, null)
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                adapter.clear();
+                                listku.setAdapter(null);
+                                columnlist.clear();
+                                adapter.notifyDataSetChanged();
+                                model.removeAllItem();
+                                Intent returnIntent = new Intent();
+                                returnIntent.putExtra("object", model);
+                                setResult(RESULT_CANCELED, returnIntent);
+                                finish();
+                            }
+                        }).create().show();
+            }
+        });
+
+        btnProses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(CheckoutListAnatomi2.this)

@@ -52,9 +52,10 @@
                 android:id="@+id/btnColTransAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/slctcycleadd"
-                android:src="@mipmap/ic_action_add_purple" />
+                android:src="@mipmap/ic_action_add" />
         </LinearLayout>
 
     </RelativeLayout>

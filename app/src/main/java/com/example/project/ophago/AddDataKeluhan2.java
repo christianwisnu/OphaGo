@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -28,6 +29,7 @@ public class AddDataKeluhan2 extends AppCompatActivity {
 
     @BindView(R.id.edKeluhanPasien2)EditText edKeluhan;
     @BindView(R.id.btn_pasien_keluhan_lanjut2)Button btnLanjut;
+    @BindView(R.id.imgKeluhanBack)ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,11 @@ public class AddDataKeluhan2 extends AppCompatActivity {
             i.putExtra("object",model);
             startActivity(i);
         }
+    }
+
+    @OnClick(R.id.imgKeluhanBack)
+    protected void back(){
+        finish();
     }
 
     private boolean validateKeluhan(EditText edittext) {

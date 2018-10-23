@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ import utilities.Utils;
 public class MainActivity2 extends AppCompatActivity {
 
     @BindView(R.id.txtMainNama)TextView txtNama;
-    @BindView(R.id.imgLogout)ImageView imgLogout;
+    @BindView(R.id.btn_logout_main2)Button btnLogout;
     @BindView(R.id.imgMainPasienBaru)ImageView imgNewTrans;
     @BindView(R.id.imgMainHistoryPasien)ImageView imgHistory;
 
@@ -101,7 +102,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.imgLogout)
+    @OnClick(R.id.btn_logout_main2)
     protected void logout(){
         pref.clear();
         startActivity(new Intent(MainActivity2.this, Login.class));

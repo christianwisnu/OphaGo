@@ -13,13 +13,36 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:minHeight="?android:attr/actionBarSize"
-        android:background="@color/defaultapk"
+        android:background="@drawable/gradient_color"
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true">
 
-    <LinearLayout
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_dimen"
+                android:layout_height="@dimen/actionbar_dimen"
+                android:scaleType="centerInside"
+                android:id="@+id/imgCheckoutBack"
+                android:src="@mipmap/ic_action_arrow_left" />
+
+            <TextView
+                style="@style/text_large_bold"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/White_Snow"
+                android:text="Pemeriksaan" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+<LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,11 +50,11 @@
 
         <ImageView
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/endoskop_tri_40"/>
+            android:layout_height="37dp"
+            android:background="@drawable/tiga"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -61,15 +84,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-50dp"
         android:layout_marginRight="10dp"
         android:gravity="right">
 
-        <ImageView
-            android:id="@+id/img_checkoutlistpasien_lanjutkan"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:background="@drawable/endoskop_tri_51"/>
+        <Button
+            android:id="@+id/btn_pasien_checkoutlistpasien_lanjut2"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/slctdefaultborderbutton"
+            android:text="Lanjutkan"
+            android:textColor="@color/defaultapk"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

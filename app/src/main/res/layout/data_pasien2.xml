@@ -269,7 +269,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/slctpurplebutton"
+                        android:background="@drawable/slctdefaultbutton"
                         android:text="simpan"
                         android:textColor="@color/md_grey_50"
                         android:textSize="18dp"

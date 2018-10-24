@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/md_black"
-                    android:text="Pemeriksaan"
+                    android:text="Pemeriksaan Baru"
                     android:textStyle="normal"
                     android:textSize="14dp"/>
 
@@ -133,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/md_black"
-                    android:text="User Control"
+                    android:text="User Kontrol"
                     android:textStyle="normal"
                     android:textSize="14dp"/>
 

@@ -650,6 +650,10 @@ public class KesimpulanActivity2 extends AppCompatActivity {
             for (String key : data.keySet()) {
                 Map<String, Integer> detail = data.get(key);
                 pFoto1.add(new Chunk(key, paraFont3));
+                doc.add(pFoto1);
+                doc.add(pSpace1);
+                pFoto1=new Paragraph();
+                pFoto1.setAlignment(Element.ALIGN_CENTER);
                 for(String keyDetail : detail.keySet()){
                     Integer nomor = detail.get(keyDetail);
                     String[] a = header.getHeader().getPathGbr(nomor).split("/");
